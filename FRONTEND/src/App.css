@@ -1,0 +1,187 @@
+.App {
+  box-sizing: border-box;
+  margin: 0 0 60px -6px;
+  padding: 0;
+  font-family: Cafe24 Ssurround air;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: "Cafe24 Ssurround air";
+  src: url("./fonts/Cafe24SsurroundAir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto bold";
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Apple SD Gothic Neo";
+  src: url("./fonts/AppleSDGothicNeoL.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 1.25rem;
+    min-height: 120vh;
+  }
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.full {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* welcome-screen */
+
+.welcome-screen {
+  background-color: #fff;
+  width: 25rem;
+  /* height: 56rem; */
+  position: absolute;
+}
+
+.back-btn img {
+  position: absolute;
+  width: 4.25rem;
+  height: 2.5625rem;
+  left: 1rem;
+  top: 3.125rem;
+  cursor: pointer;
+}
+
+.logo-name {
+  position: absolute;
+  width: 4rem;
+  height: 1.1875rem;
+  left: calc(50% - 2rem);
+  top: 1.875rem;
+
+  font-family: Apple SD Gothic Neo;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  text-align: center;
+
+  /* indego */
+
+  color: #424355;
+}
+
+.poppy img {
+  position: absolute;
+  width: 20.7rem;
+  height: 20.7rem;
+  left: calc(50% - 10.35rem);
+  top: 6.875rem;
+}
+
+.welcome-ment {
+  position: absolute;
+  width: 8.25rem;
+  height: 3.75rem;
+  left: calc(50% - 4.125rem);
+  top: 28.063rem;
+
+  /* font-family: Cafe24 Ssurround air;
+font-style: normal;
+font-weight: normal; */
+  /* font-size: 20px; */
+  line-height: 1.5rem;
+  text-align: center;
+
+  color: #000000;
+}
+
+.login-btn {
+  font-family: "Roboto bold";
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  position: absolute;
+  width: 22.375rem;
+  height: 3.5rem;
+  left: 1.75rem;
+  top: 34.6875rem;
+
+  /* indego */
+
+  background: #424355;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 3.5rem;
+  cursor: pointer;
+}
+
+.join-btn {
+  font-family: "Roboto bold";
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  color: #424355;
+  position: absolute;
+  width: 22.375rem;
+  height: 3.5rem;
+  left: 1.75rem;
+  top: 39rem;
+
+  background: #ffffff;
+  /* indego */
+
+  border: 2px solid #424355;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 3.5rem;
+  cursor: pointer;
+}
+
+/* .join-btn:hover {
+background: #4243554D;
+} */
+
+.join-btn-deco1 {
+  position: absolute;
+  width: 0.4375rem;
+  height: 0.125rem;
+  left: 20.875rem;
+  top: 39rem;
+
+  background: #ffffff;
+}
+
+.join-btn-deco2 {
+  position: absolute;
+  width: 0.4375rem;
+  height: 0.125rem;
+  left: 4.6875rem;
+  top: 42.4rem;
+
+  background: #ffffff;
+}
