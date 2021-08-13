@@ -1,6 +1,6 @@
 .App {
   box-sizing: border-box;
-  margin: 0 0 60px -6px;
+  margin: 0;
   padding: 0;
   font-family: Cafe24 Ssurround air;
   font-style: normal;
@@ -56,21 +56,22 @@
   align-items: center;
 }
 
-/* welcome-screen */
+/* welcome-scene */
 
-.welcome-screen {
+.welcome-scene {
   background-color: #fff;
   width: 25rem;
+  height: 100%;
   /* height: 56rem; */
   position: absolute;
 }
 
 .back-btn img {
   position: absolute;
-  width: 4.25rem;
-  height: 2.5625rem;
+  width: 3.25rem;
+  height: 1.9625rem;
   left: 1rem;
-  top: 3.125rem;
+  top: 1.3rem;
   cursor: pointer;
 }
 
@@ -105,7 +106,7 @@
   position: absolute;
   width: 8.25rem;
   height: 3.75rem;
-  left: calc(50% - 4.125rem);
+  left: calc(50% - 4.12rem);
   top: 28.063rem;
 
   /* font-family: Cafe24 Ssurround air;
@@ -126,7 +127,7 @@ font-weight: normal; */
   position: absolute;
   width: 22.375rem;
   height: 3.5rem;
-  left: 1.75rem;
+  left: calc(50% - 11.1875rem);
   top: 34.6875rem;
 
   /* indego */
@@ -148,7 +149,7 @@ font-weight: normal; */
   position: absolute;
   width: 22.375rem;
   height: 3.5rem;
-  left: 1.75rem;
+  left: calc(50% - 11.1875rem);
   top: 39rem;
 
   background: #ffffff;
