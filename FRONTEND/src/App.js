@@ -1,13 +1,13 @@
 import {React, useState} from 'react';
-import { Link } from 'react-router-dom';
 
 
 import WelcomePage from './pages/welcomePage';
 import LogInPage from './pages/LogInPage';
 import JoinPage from './pages/JoinPage';
+
 import './App.css';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function App() {

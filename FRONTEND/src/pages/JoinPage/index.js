@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as S from './styles';
 import LogoNameJoin from '../../components/Txt/LogoNameJoin';
 import BackBtn from '../../components/Btn/BackBtn';
+import JoinMent from '../../components/Txt/JoinMent';
 
 function JoinPage() {
 
@@ -15,8 +16,9 @@ function JoinPage() {
       <Link to="/">
       <BackBtn></BackBtn>
         </Link>
-          
         <LogoNameJoin></LogoNameJoin>
+
+    <JoinMent></JoinMent>
       </S.JoinScene>
     </>
   );

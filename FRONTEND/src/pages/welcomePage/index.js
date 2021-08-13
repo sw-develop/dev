@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import * as S from './styles';
+import Navbar from '../../components/Navbar';
 import LoginBtn from '../../components/Btn/LoginBtn';
 import JoinBtn from '../../components/Btn/JoinBtn';
 import LogoName from '../../components/Txt/LogoName';
@@ -14,6 +15,7 @@ function WelcomePage() {
   return (
     <>
       <S.WelcomeScene>
+      <Navbar></Navbar>
         <LogoName></LogoName>
         <Poppy></Poppy>
         <WelcomeMent></WelcomeMent>
@@ -25,7 +27,7 @@ function WelcomePage() {
         <Link to="/join">
             <JoinBtn></JoinBtn>
         </Link>
-        
+
       </S.WelcomeScene>
     </>
   );
