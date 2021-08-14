@@ -63,49 +63,58 @@
   align-items: center;
 }
 
-/* sidebar */
-
-.navbar{
-  background-color: transparent;
-  height: 80px;
-  display: flex;
-  justify-items: center;
-  align-items: center;
+.fullbox {
+  position: relative;
+  background-color: #fff;
+  width: 25rem;
+  height: calc(42.4rem + 0.125rem + 60px);
+  overflow: hidden;
 }
 
-.menu-bars{
-  background-color: #111;
+/* sidebar */
+
+.menu-bars {
+  background-image: url(./image/burger.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-width: 23px;
-height: 18px;
-left: 365.5px;
-top: 60px;
-z-index: 500;
-cursor: pointer;
+  width: 1.35rem;
+  height: 1.26rem;
+  right: 2rem;
+  top: 1.7rem;
+  cursor: pointer;
+}
+
+.menu-bars svg {
+  opacity: 0;
 }
 
 .nav-menu {
   background: #424355;
+  /* opacity: 0; */
   width: 19.8125rem;
-  height:100vh;
-  display:flex;
-  position:fixed;
-  top:0;
-  right:calc(50% - 12.5rem - 19.8125rem);
-  transition: 850ms;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: calc(50% - 12.5rem - 19.8125rem);
+  transition: 350ms;
   z-index: 2;
 }
 
 .nav-menu.active {
   right: calc(50% - 12.5rem);
+  opacity: 1;
   transition: 350ms;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
+  /* box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px; */
 }
-.nav-text{
+.nav-text {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
-  list-style:none;
+  padding: 0 0 0.5rem 0;
+  list-style: none;
   height: 60px;
 }
 .nav-text a {
@@ -116,18 +125,18 @@ cursor: pointer;
   height: 100%;
   display: flex;
   align-items: center;
-  padding:0 16px;
+  padding: 0 16px;
   border-radius: 4px;
 }
-.nav-text a:hover{
+.nav-text a:hover {
   /* background-color: #fff; */
 }
 .nav-menu-items {
-  width:100%;
+  width: 100%;
 }
 .navbar-toggle {
   background-color: #424355;
-  width:100%;
+  width: 100%;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -135,13 +144,12 @@ cursor: pointer;
 }
 .nav-text span {
   font-family: "Cafe24 Ssurround";
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 24px;
-
-
-  margin-left:16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 1.5rem;
+  letter-spacing: -0.5px;
 }
 
 /* welcome-scene */
@@ -151,13 +159,12 @@ line-height: 24px;
   width: 25rem;
   height: 100%;
   /* height: 56rem; */
-  position: absolute;
 }
 
 .back-btn img {
   position: absolute;
-  width: 3.25rem;
-  height: 1.9625rem;
+  width: 2.925rem;
+  height: 1.76625rem;
   left: 1rem;
   top: 1.3rem;
   cursor: pointer;
@@ -165,15 +172,15 @@ line-height: 24px;
 
 .logo-name {
   position: absolute;
-  width: 4rem;
+  width: 10rem;
   height: 1.1875rem;
-  left: calc(50% - 2rem);
+  left: calc(50% - 5rem);
   top: 1.875rem;
 
   font-family: Apple SD Gothic Neo;
   font-style: normal;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.1875rem;
   text-align: center;
 
@@ -278,43 +285,41 @@ background: #4243554D;
 /* Join */
 .join-ment-big {
   position: absolute;
-width: 7.6875rem;
-height: 2.4375rem;
-left: 2.375rem;
-top: 8.5625rem;
+  width: 10rem;
+  height: 2.4375rem;
+  left: 2.375rem;
+  top: 8.5625rem;
 
-/* title */
+  /* title */
 
-font-family: "Cafe24 Ssurround";
-font-style: normal;
-font-weight: bold;
-font-size: 1.5rem;
-line-height: 2.4375rem;
-/* identical to box height */
+  font-family: "Cafe24 Ssurround";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2.4375rem;
+  /* identical to box height */
 
+  /* indego */
 
-/* indego */
-
-color: #424355;
+  color: #424355;
 }
 
 .join-ment-small {
   position: absolute;
-width: 17.375rem;
-height: 1.5625rem;
-left: 2.375rem;
-top: 11.5rem;
+  width: 17.375rem;
+  height: 1.5625rem;
+  left: 2.375rem;
+  top: 11.5rem;
 
-/* text */
+  /* text */
 
-font-style: normal;
-font-weight: normal;
-font-size: 0.89rem;
-/* font-size: 18px; */
-line-height: 1.5625rem;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.89rem;
+  /* font-size: 18px; */
+  line-height: 1.5625rem;
 
-/* indego */
+  /* indego */
 
-color: #424355;
-
+  color: #424355;
 }

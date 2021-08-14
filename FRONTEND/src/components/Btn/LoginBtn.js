@@ -6,8 +6,8 @@ function LoginBtn() {
   return (
     <>
       <div className="login-btn">
-            로그인
-          </div>
+        로그인
+      </div>
 
     </>
   );

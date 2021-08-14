@@ -8,20 +8,20 @@ import JoinMent from '../../components/Txt/JoinMent';
 
 function JoinPage() {
 
-//   if (loading) return <LoadingScreen />;
-//   if (error) return <div>에러가 발생했습니다.</div>;
-  return (
-    <>
-      <S.JoinScene>
-      <Link to="/">
-      <BackBtn></BackBtn>
-        </Link>
-        <LogoNameJoin></LogoNameJoin>
+    //   if (loading) return <LoadingScreen />;
+    //   if (error) return <div>에러가 발생했습니다.</div>;
+    return (
+        <>
+            <S.JoinScene>
+                <Link to="/">
+                    <BackBtn></BackBtn>
+                </Link>
+                <LogoNameJoin></LogoNameJoin>
 
-    <JoinMent></JoinMent>
-      </S.JoinScene>
-    </>
-  );
+                <JoinMent></JoinMent>
+            </S.JoinScene>
+        </>
+    );
 }
 
 export default JoinPage;

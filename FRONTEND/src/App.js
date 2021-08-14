@@ -1,9 +1,10 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 
 
 import WelcomePage from './pages/welcomePage';
 import LogInPage from './pages/LogInPage';
 import JoinPage from './pages/JoinPage';
+import HowToPage from './pages/HowToPage';
 
 import './App.css';
 
@@ -15,17 +16,18 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
-      <div className="full">
-        <Switch>
-          <Route exact path ="/" component={WelcomePage}/>
-          <Route exact path="/login" component={LogInPage} />
-          <Route exact path="/join" component={JoinPage} />
-        </Switch>
+      <div className="App">
+        <div className="full">
+          <Switch>
+            <Route exact path="/" component={WelcomePage} />
+            <Route exact path="/login" component={LogInPage} />
+            <Route exact path="/join" component={JoinPage} />
+            <Route exact path="/howto" component={HowToPage} />
+          </Switch>
+        </div>
       </div>
-    </div>
     </BrowserRouter>
-    
+
   );
 }
 
