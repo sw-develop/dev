@@ -86,7 +86,7 @@
 }
 
 .menu-bars svg {
-  opacity: 0;
+  opacity: 1;
 }
 
 .nav-menu {
@@ -175,12 +175,12 @@
   width: 10rem;
   height: 1.1875rem;
   left: calc(50% - 5rem);
-  top: 1.875rem;
+  top: 3.487064116985377rem;
 
   font-family: Apple SD Gothic Neo;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8998875140607424rem;
   line-height: 1.1875rem;
   text-align: center;
 
@@ -191,10 +191,10 @@
 
 .poppy img {
   position: absolute;
-  width: 20.7rem;
-  height: 20.7rem;
-  left: calc(50% - 10.35rem);
-  top: 6.875rem;
+  width: 13.5545556805399rem;
+  height: 14.56692913385827rem;
+  left: calc(50% - 6.77727784026996rem);
+  top: 13.55455568053993rem;
 }
 
 .welcome-ment {
@@ -202,12 +202,12 @@
   width: 8.25rem;
   height: 3.75rem;
   left: calc(50% - 4.12rem);
-  top: 28.063rem;
+  top: 29.58380202474691rem;
 
   /* font-family: Cafe24 Ssurround air;
 font-style: normal;
 font-weight: normal; */
-  /* font-size: 20px; */
+  font-size: 1.124859392575928rem;
   line-height: 1.5rem;
   text-align: center;
 
@@ -217,13 +217,13 @@ font-weight: normal; */
 .login-btn {
   font-family: "Roboto bold";
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.012373453318335rem;
 
   position: absolute;
-  width: 22.375rem;
-  height: 3.5rem;
-  left: calc(50% - 11.1875rem);
-  top: 34.6875rem;
+  width: 20.13498312710911rem;
+  height: 3.374578177727784rem;
+  left: calc(50% - 10.06749156355456rem);
+  top: 38.18897637795276rem;
 
   /* indego */
 
@@ -231,30 +231,30 @@ font-weight: normal; */
   border-radius: 30px;
   color: #fff;
   text-align: center;
-  line-height: 3.5rem;
+  line-height: 3.374578177727784rem;
   cursor: pointer;
 }
 
 .join-btn {
   font-family: "Roboto bold";
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.012373453318335rem;
 
-  color: #424355;
   position: absolute;
-  width: 22.375rem;
-  height: 3.5rem;
-  left: calc(50% - 11.1875rem);
-  top: 39rem;
+  width: 20.13498312710911rem;
+  height: 3.374578177727784rem;
+  left: calc(50% - 10.06749156355456rem);
+  top: 42.51968503937008rem;
 
   background: #ffffff;
+  color: #424355;
   /* indego */
 
   border: 2px solid #424355;
   box-sizing: border-box;
   border-radius: 30px;
   text-align: center;
-  line-height: 3.5rem;
+  line-height: 3.374578177727784rem;
   cursor: pointer;
 }
 
@@ -264,20 +264,20 @@ background: #4243554D;
 
 .join-btn-deco1 {
   position: absolute;
-  width: 0.4375rem;
-  height: 0.125rem;
-  left: 20.875rem;
-  top: 39rem;
+  width: 0.3937007874015748rem;
+  height: 0.1124859392575928rem;
+  left: 4.21822272215973rem;
+  top: 45.78177727784027rem;
 
   background: #ffffff;
 }
 
 .join-btn-deco2 {
   position: absolute;
-  width: 0.4375rem;
-  height: 0.125rem;
-  left: 4.6875rem;
-  top: 42.4rem;
+  width: 0.3937007874015748rem;
+  height: 0.1124859392575928rem;
+  left: 18.785151856018rem;
+  top: 42.51968503937008rem;
 
   background: #ffffff;
 }
