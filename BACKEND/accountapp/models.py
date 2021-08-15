@@ -1,10 +1,17 @@
 from django.db import models
 from django.utils import timezone
-from django.conf import settings
+
+
+class SocialPlatform(models.Model):
+    platform = models.CharField(max_length=20, default=0)
+
+    class Meta:
+        db_table = "social_platform"
 
 
 class AppUser(models.Model):
-    kakao_id = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
+    social = models.ForeignKey(SocialPlatform, on_delete=models.CASCADE, max_length=20, blank=True, default=1)
+    social_login_id = models.CharField(max_length=50, blank=True)
     name = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
     gender = models.CharField(max_length=20)
