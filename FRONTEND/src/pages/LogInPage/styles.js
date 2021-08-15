@@ -8,8 +8,9 @@ position: absolute;
 `;
 
 export const KakaoBtn = styled.div`
-background-color: #333;
-width: 5rem;
-height: 5rem;
 position: absolute;
+background-image: url('../../image/kakao_login.png');
+left: calc(50% - 5.427446569178853rem);
+top: 25.25309336332958rem;
+cursor: pointer;
 `;

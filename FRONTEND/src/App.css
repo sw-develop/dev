@@ -67,7 +67,7 @@
   position: relative;
   background-color: #fff;
   width: 25rem;
-  height: calc(42.4rem + 0.125rem + 60px);
+  height: calc(45.78177727784027rem + 0.1124859392575928rem + 60px);
   overflow: hidden;
 }
 
@@ -163,12 +163,13 @@
 
 .back-btn img {
   position: absolute;
-  width: 2.925rem;
-  height: 1.76625rem;
-  left: 1rem;
-  top: 1.3rem;
+  width: 3.824521934758155rem;
+  height: 2.305961754780652rem;
+  left: 0.8998875140607424rem;
+  top: 2.81214848143982rem;
   cursor: pointer;
 }
+
 
 .logo-name {
   position: absolute;
@@ -191,10 +192,10 @@
 
 .poppy img {
   position: absolute;
-  width: 13.5545556805399rem;
-  height: 14.56692913385827rem;
-  left: calc(50% - 6.77727784026996rem);
-  top: 13.55455568053993rem;
+  width: 16.19797525309336rem;
+  height: 17.43532058492688rem;
+  left: calc(50% - 8.098987626546682rem);
+  top: 11.58605174353206rem;
 }
 
 .welcome-ment {
@@ -202,7 +203,7 @@
   width: 8.25rem;
   height: 3.75rem;
   left: calc(50% - 4.12rem);
-  top: 29.58380202474691rem;
+  top: 30.87739032620922rem;
 
   /* font-family: Cafe24 Ssurround air;
 font-style: normal;
@@ -224,6 +225,27 @@ font-weight: normal; */
   height: 3.374578177727784rem;
   left: calc(50% - 10.06749156355456rem);
   top: 38.18897637795276rem;
+
+  /* indego */
+
+  background: #424355;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 3.374578177727784rem;
+  cursor: pointer;
+}
+
+.start-btn {
+  font-family: "Roboto bold";
+  font-weight: bold;
+  font-size: 1.012373453318335rem;
+
+  position: absolute;
+  width: 20.13498312710911rem;
+  height: 3.374578177727784rem;
+  left: calc(50% - 10.06749156355456rem);
+  top: 42.51968503937008rem;
 
   /* indego */
 
@@ -282,21 +304,38 @@ background: #4243554D;
   background: #ffffff;
 }
 
+.with-kakao {
+  position: absolute;
+  width: 9.955005624296963rem;
+  height: 1.40607424071991rem;
+  left: calc(50% - 4.977502812148481rem);
+  top: 22.83464566929134rem;
+
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.40607424071991rem;
+}
+
+.KakaobtnImg {
+  width: 10.85489313835771rem;
+}
+
 /* Join */
 .join-ment-big {
   position: absolute;
   width: 10rem;
   height: 2.4375rem;
-  left: 2.375rem;
-  top: 8.5625rem;
+  left: 2.137232845894263rem;
+  top: 7.705286839145107rem;
 
   /* title */
 
   font-family: "Cafe24 Ssurround";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 2.4375rem;
+  font-size: 1.687289088863892rem;
+  line-height: 2.19347581552306rem;
+  letter-spacing: -1.6px;
   /* identical to box height */
 
   /* indego */
@@ -308,18 +347,54 @@ background: #4243554D;
   position: absolute;
   width: 17.375rem;
   height: 1.5625rem;
-  left: 2.375rem;
-  top: 11.5rem;
+  left: 2.137232845894263rem;
+  top: 10.34870641169854rem;
 
   /* text */
 
   font-style: normal;
   font-weight: normal;
-  font-size: 0.89rem;
+  font-size: 1.012373453318335rem;
   /* font-size: 18px; */
-  line-height: 1.5625rem;
+  line-height: 1.40607424071991rem;
 
   /* indego */
+
+  color: #424355;
+}
+
+.join-complete-img {
+  position: absolute;
+  width: 4.330708661417323rem;
+  height: 3.880764904386952rem;
+  left: 1.912260967379078rem;
+  top: 14.45444319460067rem;
+}
+
+.join-complete-ment-big {
+  position: absolute;
+  width: 10.17997750281215rem;
+  height: 1.968503937007874rem;
+  left: 2.137232845894263rem;
+  top: 20.3037120359955rem;
+
+  font-family: "Cafe24 Ssurround";
+  font-size: 1.687289088863892rem;
+  line-height: 1.968503937007874rem;
+
+  color: #424355;
+}
+
+.join-complete-ment-small {
+  position: absolute;
+  width: 17.82902137232846rem;
+  height: 2.643419572553431rem;
+  left: 2.137232845894263rem;
+  top: 23.3970753655793rem;
+
+  font-family: "Cafe24 Ssurround air";
+  font-size: 1.012373453318335rem;
+  line-height: 1.181102362204724rem;
 
   color: #424355;
 }

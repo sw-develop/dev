@@ -5,6 +5,7 @@ import WelcomePage from './pages/welcomePage';
 import LogInPage from './pages/LogInPage';
 import JoinPage from './pages/JoinPage';
 import HowToPage from './pages/HowToPage';
+import JoinCompletePage from './pages/JoinCompletePage';
 
 import './App.css';
 
@@ -22,7 +23,9 @@ function App() {
             <Route exact path="/" component={WelcomePage} />
             <Route exact path="/login" component={LogInPage} />
             <Route exact path="/join" component={JoinPage} />
+            <Route exact path="/joincomplete" component={JoinCompletePage} />
             <Route exact path="/howto" component={HowToPage} />
+
           </Switch>
         </div>
       </div>

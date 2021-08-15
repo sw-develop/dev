@@ -5,9 +5,8 @@ import * as S from './styles';
 import LogoNameLogin from '../../components/Txt/LogoNameLogin';
 import BackBtn from '../../components/Btn/BackBtn';
 import LoginMent from '../../components/Txt/LoginMent';
-import LoginBtn from '../../components/Btn/LoginBtn';
-import JoinBtn from '../../components/Btn/JoinBtn';
-import KakaoLogin from 'react-kakao-login';
+import KakaobtnImg from '../../image/kakao_login.png';
+import LoginWithKakao from '../../components/Txt/LoginWithKakao';
 
 const { Kakao } = window;
 
@@ -59,15 +58,12 @@ function LogInPage() {
 
                 <LogoNameLogin></LogoNameLogin>
                 <LoginMent></LoginMent>
-                <Link to="/howto">
-                    <LoginBtn></LoginBtn>
-                </Link>
 
-                <Link to="/join">
-                    <JoinBtn></JoinBtn>
-                </Link>
+                <LoginWithKakao></LoginWithKakao>
 
-                <S.KakaoBtn fill className="btn kakao" onClick={KakaoLoginClickHandler}/>
+                <S.KakaoBtn onClick={KakaoLoginClickHandler}>
+                    <img src={KakaobtnImg} className="KakaobtnImg"/>
+                </S.KakaoBtn>
             </S.LogInScene>
         </>
     );
