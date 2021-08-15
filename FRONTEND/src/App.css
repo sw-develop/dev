@@ -71,6 +71,21 @@
   overflow: hidden;
 }
 
+.FlowImg img{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.swiper-container {
+  margin: 0 !important;
+  overflow: visible;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: -2.5rem;
+}
+
 /* sidebar */
 
 .menu-bars {
@@ -397,4 +412,93 @@ background: #4243554D;
   line-height: 1.181102362204724rem;
 
   color: #424355;
+}
+
+.service-flow {
+  position: absolute;
+  width : 25rem;
+  height: 31rem;
+  left: 0;
+  top: 8.942632170978628rem;
+}
+
+.flow1-txt {
+  position: absolute;
+  width: 8.773903262092238rem;
+  height: 3.149606299212598rem;
+  left: 4.049493813273341rem;
+  top: 9.617547806524182rem;
+
+  font-size: 1.124859392575928rem;
+  color: #424355;
+}
+
+.flow2-txt {
+  position: absolute;
+  width: 15.18560179977503rem;
+  height: 6.299212598425197rem;
+  left: 2.19347581552306rem;
+  top: 0.2249718785151853rem;
+
+  font-size: 1.012373453318335rem;
+  color: #424355;
+}
+
+.flow3-txt {
+  position: absolute;
+  width: 17.88526434195726rem;
+  height: 9.448818897637795rem;
+  left: 2.137232845894263rem;
+  top: 19.06636670416198rem;
+
+  font-size: 1.012373453318335rem;
+  color: #424355;
+}
+
+.flow4-txt {
+  position: absolute;
+  width: 11.92350956130484rem;
+  height: 3.149606299212598rem;
+  left: 2.137232845894263rem;
+  top: 25.36557930258718rem;
+
+  font-size: 1.012373453318335rem;
+  color: #424355;
+}
+
+.flow5-txt {
+  position: absolute;
+  width: 17.88526434195726rem;
+  height: 6.299212598425197rem;
+  left: 2.137232845894263rem;
+  top: 0.2249718785151853rem;
+
+  font-size: 1.012373453318335rem;
+  color: #424355;
+}
+/* 
+.swiper-pagination-bullet {
+  opacity: 0.2;
+} */
+
+:root {
+  --swiper-theme-color: #87AFBA !important;
+}
+
+.swiper-pagination-bullet {
+  background: #D4E2E6 !important;
+  opacity: 1 !important;
+  width: 0.4499437570303712rem !important;
+  height: 0.4499437570303712rem !important;
+  transform: translateY(-0.1687289088863892rem);
+  margin: 0 0.562429696287964rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #87AFBA !important;
+  opacity: 1 !important;
+  width: 0.7874015748031496rem !important;
+  height: 0.7874015748031496rem !important;
+  transform: translateY(0rem);
+  margin: 0 0.4780652418447694rem !important;
 }
