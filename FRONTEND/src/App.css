@@ -67,7 +67,7 @@
   position: relative;
   background-color: #fff;
   width: 25rem;
-  height: calc(45.78177727784027rem + 0.1124859392575928rem + 60px);
+  height: 60rem;
   overflow: hidden;
 }
 
@@ -93,15 +93,17 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  width: 1.35rem;
-  height: 1.26rem;
+  width: 1.45rem;
+  height: 1.35rem;
   right: 2rem;
-  top: 1.7rem;
+  top: 3.36rem;
   cursor: pointer;
 }
 
 .menu-bars svg {
-  opacity: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .nav-menu {
@@ -207,9 +209,9 @@
 
 .poppy img {
   position: absolute;
-  width: 16.19797525309336rem;
-  height: 17.43532058492688rem;
-  left: calc(50% - 8.098987626546682rem);
+  width: 19.23529411764706rem;
+  height: 19rem;
+  left: calc(50% - 9.617647058823529rem);
   top: 11.58605174353206rem;
 }
 
@@ -218,7 +220,7 @@
   width: 8.25rem;
   height: 3.75rem;
   left: calc(50% - 4.12rem);
-  top: 30.87739032620922rem;
+  top: 32.2rem;
 
   /* font-family: Cafe24 Ssurround air;
 font-style: normal;
@@ -236,10 +238,10 @@ font-weight: normal; */
   font-size: 1.012373453318335rem;
 
   position: absolute;
-  width: 20.13498312710911rem;
-  height: 3.374578177727784rem;
-  left: calc(50% - 10.06749156355456rem);
-  top: 38.18897637795276rem;
+  width: 21rem;
+  height: 3.7rem;
+  left: calc(50% - 10.5rem);
+  top: 40rem;
 
   /* indego */
 
@@ -247,7 +249,28 @@ font-weight: normal; */
   border-radius: 30px;
   color: #fff;
   text-align: center;
-  line-height: 3.374578177727784rem;
+  line-height: 3.7rem;
+  cursor: pointer;
+}
+
+.create-post-box-btn {
+  font-family: "Roboto bold";
+  font-weight: bold;
+  font-size: 1.012373453318335rem;
+
+  position: absolute;
+  width: 21rem;
+  height: 3.7rem;
+  left: calc(50% - 10.5rem);
+  top: 44.5rem;
+
+  /* indego */
+
+  background: #424355;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 3.7rem;
   cursor: pointer;
 }
 
@@ -257,10 +280,10 @@ font-weight: normal; */
   font-size: 1.012373453318335rem;
 
   position: absolute;
-  width: 20.13498312710911rem;
-  height: 3.374578177727784rem;
-  left: calc(50% - 10.06749156355456rem);
-  top: 42.51968503937008rem;
+  width: 21rem;
+  height: 3.7rem;
+  left: calc(50% - 10.5rem);
+  top: 44rem;
 
   /* indego */
 
@@ -268,7 +291,7 @@ font-weight: normal; */
   border-radius: 30px;
   color: #fff;
   text-align: center;
-  line-height: 3.374578177727784rem;
+  line-height: 3.7rem;
   cursor: pointer;
 }
 
@@ -278,10 +301,10 @@ font-weight: normal; */
   font-size: 1.012373453318335rem;
 
   position: absolute;
-  width: 20.13498312710911rem;
-  height: 3.374578177727784rem;
-  left: calc(50% - 10.06749156355456rem);
-  top: 42.51968503937008rem;
+  width: 21rem;
+  height: 3.7rem;
+  left: calc(50% - 10.5rem);
+  top: 44.5rem;
 
   background: #ffffff;
   color: #424355;
@@ -291,7 +314,7 @@ font-weight: normal; */
   box-sizing: border-box;
   border-radius: 30px;
   text-align: center;
-  line-height: 3.374578177727784rem;
+  line-height: 3.7rem;
   cursor: pointer;
 }
 
@@ -301,20 +324,20 @@ background: #4243554D;
 
 .join-btn-deco1 {
   position: absolute;
-  width: 0.3937007874015748rem;
+  width: 0.4rem;
   height: 0.1124859392575928rem;
   left: 4.21822272215973rem;
-  top: 45.78177727784027rem;
+  top: 48.1rem;
 
   background: #ffffff;
 }
 
 .join-btn-deco2 {
   position: absolute;
-  width: 0.3937007874015748rem;
+  width: 0.4rem;
   height: 0.1124859392575928rem;
   left: 18.785151856018rem;
-  top: 42.51968503937008rem;
+  top: 44.5rem;
 
   background: #ffffff;
 }
@@ -380,8 +403,8 @@ background: #4243554D;
 
 .join-complete-img {
   position: absolute;
-  width: 4.330708661417323rem;
-  height: 3.880764904386952rem;
+  width: 5rem;
+  height: 4.480519480519481rem;
   left: 1.912260967379078rem;
   top: 14.45444319460067rem;
 }
@@ -391,7 +414,7 @@ background: #4243554D;
   width: 10.17997750281215rem;
   height: 1.968503937007874rem;
   left: 2.137232845894263rem;
-  top: 20.3037120359955rem;
+  top: 21rem;
 
   font-family: "Cafe24 Ssurround";
   font-size: 1.687289088863892rem;
@@ -405,11 +428,11 @@ background: #4243554D;
   width: 17.82902137232846rem;
   height: 2.643419572553431rem;
   left: 2.137232845894263rem;
-  top: 23.3970753655793rem;
+  top: 24rem;
 
   font-family: "Cafe24 Ssurround air";
   font-size: 1.012373453318335rem;
-  line-height: 1.181102362204724rem;
+  line-height: 1.55rem;
 
   color: #424355;
 }
@@ -419,7 +442,7 @@ background: #4243554D;
   width : 25rem;
   height: 31rem;
   left: 0;
-  top: 8.942632170978628rem;
+  top: 8.5rem;
 }
 
 .flow1-txt {
@@ -427,7 +450,8 @@ background: #4243554D;
   width: 8.773903262092238rem;
   height: 3.149606299212598rem;
   left: 4.049493813273341rem;
-  top: 9.617547806524182rem;
+  top: 10.8rem;
+  line-height: 140.5%;
 
   font-size: 1.124859392575928rem;
   color: #424355;
@@ -435,10 +459,11 @@ background: #4243554D;
 
 .flow2-txt {
   position: absolute;
-  width: 15.18560179977503rem;
+  width: 16rem;
   height: 6.299212598425197rem;
   left: 2.19347581552306rem;
-  top: 0.2249718785151853rem;
+  top: 1rem;
+  line-height: 158%;
 
   font-size: 1.012373453318335rem;
   color: #424355;
@@ -446,10 +471,11 @@ background: #4243554D;
 
 .flow3-txt {
   position: absolute;
-  width: 17.88526434195726rem;
+  width: 18.5rem;
   height: 9.448818897637795rem;
   left: 2.137232845894263rem;
-  top: 19.06636670416198rem;
+  top: 21rem;
+  line-height: 158%;
 
   font-size: 1.012373453318335rem;
   color: #424355;
@@ -457,10 +483,11 @@ background: #4243554D;
 
 .flow4-txt {
   position: absolute;
-  width: 11.92350956130484rem;
+  width: 15rem;
   height: 3.149606299212598rem;
   left: 2.137232845894263rem;
-  top: 25.36557930258718rem;
+  top: 27.4rem;
+  line-height: 158%;
 
   font-size: 1.012373453318335rem;
   color: #424355;
@@ -468,10 +495,11 @@ background: #4243554D;
 
 .flow5-txt {
   position: absolute;
-  width: 17.88526434195726rem;
+  width: 19rem;
   height: 6.299212598425197rem;
   left: 2.137232845894263rem;
-  top: 0.2249718785151853rem;
+  top: 0.6rem;
+  line-height: 158%;
 
   font-size: 1.012373453318335rem;
   color: #424355;
@@ -490,7 +518,8 @@ background: #4243554D;
   opacity: 1 !important;
   width: 0.4499437570303712rem !important;
   height: 0.4499437570303712rem !important;
-  transform: translateY(-0.1687289088863892rem);
+  /* transform: translateY(-0.1687289088863892rem); */
+  transform: translateY(-1.1rem);
   margin: 0 0.562429696287964rem !important;
 }
 
@@ -499,6 +528,6 @@ background: #4243554D;
   opacity: 1 !important;
   width: 0.7874015748031496rem !important;
   height: 0.7874015748031496rem !important;
-  transform: translateY(0rem);
+  transform: translateY(-0.9312710911136108rem);
   margin: 0 0.4780652418447694rem !important;
 }

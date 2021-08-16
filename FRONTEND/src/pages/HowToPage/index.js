@@ -15,6 +15,7 @@ import Flow2 from '../../components/ServiceFlow/Flow2';
 import Flow3 from '../../components/ServiceFlow/Flow3';
 import Flow4 from '../../components/ServiceFlow/Flow4';
 import Flow5 from '../../components/ServiceFlow/Flow5';
+import CreatePostboxBtn from '../../components/Btn/CreatePostboxBtn';
 
 SwiperCore.use([Thumbs ,Pagination])
 
@@ -43,6 +44,8 @@ function HowToPage() {
                             <SwiperSlide><Flow5></Flow5></SwiperSlide>
                         </Swiper>
                     </div>
+
+                    <CreatePostboxBtn></CreatePostboxBtn>
                 </div>
 
             </S.HowToScene>

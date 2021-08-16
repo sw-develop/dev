@@ -10,7 +10,7 @@ function Flow1() {
             <img src={flow1}></img>
     </div>
     <div className="flow1-txt">
-        "만나서 반가워, <br></br> 나는 파피라고해".
+        "만나서 반가워, <br></br> 나는 파피라고해."
     </div>
 
     </>
