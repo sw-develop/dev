@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import KakaoLoginView
+from accountapp.views import KakaoLoginView
 
 app_name = "accountapp"
 
 urlpatterns = [
-    path('login/kakao/', KakaoLoginView.as_view()),
+    path('login/kakao/', KakaoLoginView.as_view(), name="login"),
 ]

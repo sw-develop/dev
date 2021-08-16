@@ -1,21 +1,32 @@
 import jwt
-from django.contrib.sites import requests
+import requests
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
-from accountapp.models import SocialPlatform, AppUser
+from accountapp.models import AppUser
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class KakaoLoginView(View):  # 카카오 로그인
-    def get(self, request, wef_key=None):
+    def post(self, request, wef_key=None):
         access_token = request.headers["Authorization"]
-        headers = ({'Authorization': f"Bearer {access_token}"})
-        url = "https://kapi.kakao.com/v1/user/me"  # Authorization(프론트에서 받은 토큰)을 이용해서 회원의 정보를 확인하기 위한 카카오 API 주소
+        headers = ({'Authorization': f"{access_token}"})
+        url = "https://kapi.kakao.com/v2/user/me"  # Authorization(프론트에서 받은 토큰)을 이용해서 회원의 정보를 확인하기 위한 카카오 API 주소
         response = requests.request("POST", url, headers=headers)  # API를 요청하여 회원의 정보를 response에 저장
         user = response.json()
+        print(user)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-        if AppUser.objects.filter(social_login_id=user['id']).exists():  # 기존에 소셜로그인을 했었는지 확인
-            user_info = AppUser.objects.get(social_login_id=user['id'])
+        if AppUser.objects.filter(id=user['id']).exists():  # 기존에 소셜로그인을 했었는지 확인
+            user_info = AppUser.objects.get(id=user['id'])
+
+            print(wef_key)
+            print(type(wef_key), "!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print(user_info.id)
+            wef_key = "aa"
+
             encoded_jwt = jwt.encode({'id': user_info.id}, wef_key, algorithm='HS256')  # jwt토큰 발행
 
             return JsonResponse({  # jwt토큰, 이름, 타입 프론트엔드에 전달
@@ -25,12 +36,13 @@ class KakaoLoginView(View):  # 카카오 로그인
             }, status=200)
         else:
             new_user_info = AppUser(
-                social_login_id=user['id'],
+                id=user['id'],
                 name=user['properties']['nickname'],
-                social=SocialPlatform.objects.get(platform="kakao"),
                 email=user['properties'].get('email', None)
             )
             new_user_info.save()
+
+
             encoded_jwt = jwt.encode({'id': new_user_info.id}, wef_key, algorithm='HS256')  # jwt토큰 발행
             none_member_type = 1
             return JsonResponse({
