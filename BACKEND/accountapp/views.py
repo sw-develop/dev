@@ -23,7 +23,7 @@ class KakaoLoginView(View):  # 카카오 로그인
 
             encoded_jwt = jwt.encode({'id': user_info.id}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
             return JsonResponse({  # jwt토큰, 이름, 타입 프론트엔드에 전달
-                'access_token': encoded_jwt.encode().decode('UTF-8'),
+                'access_token': encoded_jwt,
                 'user_name': user_info.name,
                 'user_pk': user_info.id
             }, status=200)
