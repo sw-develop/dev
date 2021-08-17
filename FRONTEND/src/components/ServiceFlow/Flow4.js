@@ -12,6 +12,7 @@ function Flow4() {
     <div className="flow4-txt">
         "이 링크를 친구들에게 전달하면, <br></br> 친구들이 네게 편지를 쓸 수 있어!"
     </div>
+    <div className="flow4-deco1"></div>
 
     </>
   );

@@ -12,6 +12,8 @@ function Flow2() {
     <div className="flow2-txt">
         "요즘 지구인들의 행복 지수가 <br></br> 너무 낮은 것 같아. <br></br> 그래서 내가 뭔가를 하나 발명했어!"
     </div>
+    <div className="flow2-deco1"></div>
+    <div className="flow2-deco2"></div>
 
     </>
   );

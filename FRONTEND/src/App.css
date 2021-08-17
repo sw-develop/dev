@@ -98,6 +98,8 @@
   right: 2rem;
   top: 3.36rem;
   cursor: pointer;
+  
+  z-index: 1;
 }
 
 .menu-bars svg {
@@ -110,7 +112,7 @@
   background: #424355;
   /* opacity: 0; */
   width: 19.8125rem;
-  height: 100vh;
+  height: 100%;
   display: flex;
   position: absolute;
   top: 0;
@@ -124,7 +126,6 @@
   opacity: 1;
   transition: 350ms;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
-  /* box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px; */
 }
 .nav-text {
   display: flex;
@@ -142,7 +143,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 16px 0 0;
   border-radius: 4px;
 }
 .nav-text a:hover {
@@ -150,23 +151,35 @@
 }
 .nav-menu-items {
   width: 100%;
+  height: 120vh;
+  padding: 0 2.2rem;
 }
 .navbar-toggle {
-  background-color: #424355;
-  width: 100%;
-  height: 80px;
+  background-image: url(./image/x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.471rem;
+  height: 1.471rem;
+  position: absolute;
+  right: 1.4rem;
+  margin: 1.6rem 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  z-index: 2;
 }
 .nav-text span {
   font-family: "Cafe24 Ssurround";
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.9rem;
   line-height: 24px;
   margin-left: 1.5rem;
   letter-spacing: -0.5px;
+}
+
+.nav-item-zone {
+  margin: 5rem 0;
 }
 
 /* welcome-scene */
@@ -213,6 +226,48 @@
   height: 19rem;
   left: calc(50% - 9.617647058823529rem);
   top: 11.58605174353206rem;
+}
+
+.postboxbefore img {
+  position: absolute;
+  width: 14.942rem;
+  height: 23.65rem;
+  left: 5.236rem;
+  top: 14.236rem;
+}
+
+.finger img {
+  position: absolute;
+  width: 7.05rem;
+  height: 7.351rem;
+  left: 2.7rem;
+  top: 15.24rem;
+}
+
+.postboxafter img {
+  position: absolute;
+  width: 15.53rem;
+  height: 23.471rem;
+  left: 5.53rem;
+  top: 14.59rem;
+}
+
+.bird-txt {
+  position: absolute;
+  left: 4.53rem;
+  top: 28.24rem;
+  font-size: 0.9rem;
+  line-height: 140.5%;
+
+  color: #424355;
+}
+
+.bird img {
+  position: absolute;
+  width: 5rem;
+  height: 6.6471rem;
+  left: 4.24rem;
+  top: 29.06rem;
 }
 
 .welcome-ment {
@@ -530,4 +585,312 @@ background: #4243554D;
   height: 0.7874015748031496rem !important;
   transform: translateY(-0.9312710911136108rem);
   margin: 0 0.4780652418447694rem !important;
+}
+
+.flow2-deco1 {
+  position: absolute;
+  top: 1.4rem;
+  left: 9.7rem;
+  width: 4.9rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.flow2-deco2 {
+  position: absolute;
+  top: 4.6rem;
+  left: 5.15rem;
+  width: 12.9rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.flow3-deco1 {
+  position: absolute;
+  top: 22.9rem;
+  left: 2.1rem;
+  width: 18rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.flow3-deco2 {
+  position: absolute;
+  top: 24.5rem;
+  left: 2.1rem;
+  width: 7.7rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.flow4-deco1 {
+  position: absolute;
+  top: 27.8rem;
+  left: 2.5rem;
+  width: 11.8rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.flow5-deco1 {
+  position: absolute;
+  top: 2.6rem;
+  left: 2.1rem;
+  width: 12.9rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
+.footer-box {
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+  top: 53rem;
+  background-color: #E5E5E5;
+}
+
+.footer-txt {
+  padding: 1.3rem 1.5rem;
+  font-size: 0.8rem;
+  line-height: 165%;
+  color: #000;
+}
+
+.name-or-nickname {
+  font-family: 'Roboto';
+  font-size: 0.94rem;
+
+  position: absolute;
+  top: 8.8rem;
+  left: 1.5rem;
+  color: #000;
+}
+
+.name-or-nickname-input{
+  border: none;
+
+  font-family: 'Roboto';
+  font-size: 0.94rem;
+
+  position: absolute;
+  width: 20rem;
+  height: 1.2rem;
+  top: 11.5rem;
+  left: 1.5rem;
+  color: #000;
+
+}
+
+.name-or-nickname-line {
+  width: 20rem;
+  height: 0.09rem;
+
+  position: absolute;
+  top: 13.3rem;
+  left: 1.75rem;
+  background-color: #424355;
+}
+
+.create-post-box-ment {
+  position: absolute;
+  width: 15rem;
+  left: calc(50% - 7.5rem);
+  top: 12.9rem;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #2B2B2B;
+  z-index: 2;
+}
+
+.create-post-box-ment-deco {
+  position: absolute;
+  width: 12rem;
+  height: 1.12rem;
+
+  left: 4.7rem;
+  top: 13.2rem;
+
+  background-color: #FFF8DD;
+  z-index: 1;
+}
+
+.link-name-small {
+  position: absolute;
+  width: 4rem;
+  height: 1.2rem;
+  left: 2rem;
+  top: 39.6rem;
+
+  font-family: "Roboto";
+  font-size: 0.9rem;
+  line-height: 1.12rem;
+
+  color: #000;
+}
+
+.link-name-big {
+  position: absolute;
+  width: 8rem;
+  height: 1.3rem;
+  left: 1.65rem;
+  top: 41.3rem;
+
+  font-family: "Cafe24 Ssurround";
+  font-size: 1rem;
+  line-height: 1.24rem;
+
+  color: #2B2B2B;
+  
+}
+
+.alert-create-post-box {
+  position: absolute;
+  width: 21.1rem;
+  height: 3.83rem;
+  left: calc(50% - 10.55rem);
+  top: 7.9rem;
+  border-radius: 32.5px;
+  background-color: #424355;
+  opacity: 0.95;
+
+  font-family: "Cafe24 Ssurround air";
+  font-size: 0.9rem;
+  line-height: 3.9rem;
+  text-align: center;
+
+  color: #fff;
+}
+
+.kakao-plus-ment-up {
+  position: absolute;
+  width: 18rem;
+  height: 2.95rem;
+  left: calc(50% - 9rem);
+  top: 13.24rem;
+  text-align: center;
+
+  font-family: "Cafe24 Ssurround air";
+  font-size: 1rem;
+  line-height: 1.48rem;
+
+  color: #424355;
+
+  z-index: 2;
+}
+
+.kakao-plus-ment-deco1 {
+  position: absolute;
+  width: 6.7rem;
+  height: 1rem;
+  left: 5.1rem;
+  top: 13.6rem;
+
+  background-color: #FFEA9F;
+  z-index: 1;
+
+}
+
+.kakao-plus-ment-deco2 {
+  position: absolute;
+  width: 13.5rem;
+  height: 1rem;
+  left: 3.7rem;
+  top: 15.1rem;
+
+  background-color: #FFEA9F;
+  z-index: 1;
+}
+
+.kakao-plus-ment-deco3 {
+  position: absolute;
+  width: 11.18rem;
+  height: 1rem;
+  top: 15.9rem;
+  left: 3.8rem;
+  /* transform: rotate(1deg); */
+
+  background-image: url(./image/underline.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.kakao-plus-ment-down {
+  position: absolute;
+  width: 15.65rem;
+  height: 2.95rem;
+  left: calc(50% - 7.825rem);
+  top: 32.77rem;
+  text-align: center;
+
+  font-family: "Cafe24 Ssurround air";
+  font-size: 1rem;
+  line-height: 1.48rem;
+
+  color: #424355;
+}
+
+.kakao-plus-img img {
+  position: absolute;
+  width: 12.83rem;
+  height: 3.59rem;
+  left: calc(50% - 6.415rem);
+  top: 24rem; 
+}
+
+.arrow-img {
+  position: absolute;
+  width: 1.212rem;
+  height: 3.53rem;
+  left: 18.3rem;
+  top: 18.24rem;
+}
+
+.alert-create-post-box img {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  left: 4.3rem;
+  top: 1.1rem;
+}
+
+.poppy-tag {
+  position: absolute;
+  left: 17rem;
+  top: 8.353rem;
+  font-size: 1.1rem;
+  line-height: 1.77rem;
+  color: #424355;
+}
+
+.bird-tag {
+  position: absolute;
+  left: 4.2942rem;
+  top: 12.471rem;
+  font-size: 1.1rem;
+  line-height: 1.77rem;
+  color: #424355;
+}
+
+.poppy-tag-img {
+  position: absolute;
+  left: 16.6rem;
+  top: 10.4rem;
+}
+
+.bird-tag-img {
+  position: absolute;
+  left: 4.4rem;
+  top: 14.4rem;
+}
+
+.Nav-icon {
+  width: 2.236rem;
+  height: 2.236rem;
 }
