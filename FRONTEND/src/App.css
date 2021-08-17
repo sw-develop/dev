@@ -71,6 +71,15 @@
   overflow: hidden;
 }
 
+.fullbox-dark {
+  position: relative;
+  background-color: #424355;
+  color: #fff;
+  width: 25rem;
+  height: 60rem;
+  overflow: hidden;
+}
+
 .FlowImg img{
   position: absolute;
   width: 100%;
@@ -103,6 +112,26 @@
 }
 
 .menu-bars svg {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-bars-dark {
+  background-image: url(./image/burger-white.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 1.45rem;
+  height: 1.35rem;
+  right: 2rem;
+  top: 3.36rem;
+  cursor: pointer;
+  
+  z-index: 1;
+}
+
+.menu-bars-dark svg {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -218,6 +247,24 @@
   /* indego */
 
   color: #424355;
+}
+
+.logo-name-dark {
+  position: absolute;
+  width: 10rem;
+  height: 1.1875rem;
+  left: calc(50% - 5rem);
+  top: 3.487064116985377rem;
+
+  font-family: Apple SD Gothic Neo;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8998875140607424rem;
+  line-height: 1.1875rem;
+  text-align: center;
+
+  /* indego */
+  color: #fff;
 }
 
 .poppy img {
@@ -893,4 +940,71 @@ background: #4243554D;
 .Nav-icon {
   width: 2.236rem;
   height: 2.236rem;
+}
+
+.received-letter-ment1 {
+  position: absolute;
+  left: 2.2353rem;
+  top: 9.353rem;
+  font-size: 1rem;
+  line-height: 158%;
+
+  color: #fff;
+}
+
+.received-letter-ment2 {
+  position: absolute;
+  width: 11rem;
+  left: calc(50% - 5.5rem);
+  top: 35.59rem;
+  
+  text-align: center;
+
+  font-family: 'Cafe24 Ssurround';
+  font-size: 1.35rem;
+  line-height: 1.7rem;
+
+  color: #fff;
+}
+
+
+.received-letter-ment3 {
+  position: absolute;
+  width: 19rem;
+  left: calc(50% - 9.5rem);
+  top: 38rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  color: #fff;
+}
+
+.ReceivedLetterPoppy img {
+  position: absolute;
+  width: 11.295rem;
+  height: 16.765rem;
+  left: calc(50% - 5.6475rem);
+  top: 16.412rem;
+}
+
+.kakaoplus-desc {
+  position: absolute;
+  width: 11.5rem;
+  top: 44.12rem;
+  left: calc(50% - 5.75rem);
+
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+
+  color: #989898;
+}
+
+.kakaoplus-received-letter-page img{
+  position: absolute;
+  width: 9.412rem;
+  height: 2.65rem;
+  top: 46.53rem;
+  left: calc(50% - 4.706rem);
 }
