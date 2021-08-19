@@ -17,4 +17,4 @@ class MailBox(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = 'mailbox'
+        db_table = 'mailbox'  # default: mailboxapp_mailbox
