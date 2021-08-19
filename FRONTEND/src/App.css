@@ -283,12 +283,24 @@
   top: 14.236rem;
 }
 
+@keyframes fingeranimation {
+  from { transform: rotate(15deg);}
+
+  /* 50% { transform: rotate(10deg);} */
+
+  to { transform: rotate(-15deg);}
+}
+
 .finger img {
   position: absolute;
   width: 7.05rem;
   height: 7.351rem;
   left: 2.7rem;
   top: 15.24rem;
+  animation-duration: 0.5s;
+  animation-name: fingeranimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .postboxafter img {
@@ -694,6 +706,16 @@ background: #4243554D;
   z-index: -1;
 }
 
+.flow6-deco1 {
+  position: absolute;
+  top: 5.7rem;
+  left: 2.1rem;
+  width: 13.3rem;
+  height: 1.15rem;
+  background-color: #FFF8DD;
+  z-index: -1;
+}
+
 .footer-box {
   position: absolute;
   width: 100%;
@@ -813,6 +835,39 @@ background: #4243554D;
   text-align: center;
 
   color: #fff;
+}
+
+.alert-nick-name {
+  position: absolute;
+  width: 21.1rem;
+  height: 5.6rem;
+  left: calc(50% - 10.55rem);
+  top: 36.83rem;
+  border-radius: 32.5px;
+  background-color: #424355;
+  opacity: 0.95;
+
+  font-family: "Cafe24 Ssurround air";
+  font-size: 0.9rem;
+
+  color: #fff;
+}
+
+.alert-nick-name div {
+  position: absolute;
+  width: 16rem;
+  left: 4rem;
+  top: 1.4rem; 
+  line-height: 1.42rem;
+}
+
+.alert-nick-name img {
+  position: absolute;
+  width: 1.9rem;
+  height: 1.9rem;
+  left: 1.5rem;
+  top: 1.4rem; 
+  line-height: 1.42rem;
 }
 
 .kakao-plus-ment-up {

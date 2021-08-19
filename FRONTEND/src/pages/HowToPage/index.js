@@ -15,6 +15,7 @@ import Flow2 from '../../components/ServiceFlow/Flow2';
 import Flow3 from '../../components/ServiceFlow/Flow3';
 import Flow4 from '../../components/ServiceFlow/Flow4';
 import Flow5 from '../../components/ServiceFlow/Flow5';
+import Flow6 from '../../components/ServiceFlow/Flow6';
 import CreatePostboxBtn from '../../components/Btn/CreatePostboxBtn';
 import Footer from '../../components/Footer';
 
@@ -43,6 +44,7 @@ function HowToPage() {
                             <SwiperSlide><Flow3></Flow3></SwiperSlide>
                             <SwiperSlide><Flow4></Flow4></SwiperSlide>
                             <SwiperSlide><Flow5></Flow5></SwiperSlide>
+                            <SwiperSlide><Flow6></Flow6></SwiperSlide>
                         </Swiper>
                     </div>
 
