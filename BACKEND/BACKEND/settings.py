@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'accountapp',
     'letterapp',
-    'mailboxapp'
+    'accountapp.apps.Accountapp2Config',
+    'mailboxapp.apps.MailboxAppConfig'
 ]
 
 MIDDLEWARE = [
