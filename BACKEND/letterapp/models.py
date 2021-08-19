@@ -1,11 +1,17 @@
 from django.db import models
 from django.utils import timezone
-from mailboxapp.models import MailBox
+
+from dev.BACKEND.mailboxapp.models import MailBox
 
 
 class Letter(models.Model):
-    target_mailbox = models.ForeignKey(MailBox, related_name='letter', on_delete=models.CASCADE)
-    content = models.TextField(max_length=3000)
+    id = models.BigIntegerField(primary_key=True, db_column='letter_id')
+    mailbox = models.ForeignKey(MailBox, on_delete=models.CASCADE, related_name='letters')
+    content = models.TextField()
     sender = models.CharField(max_length=20)
-    color = models.CharField(max_length=20)
-    letter_created = models.DateTimeField(default=timezone.now)
+
+    ColorType = models.TextChoices('ColorType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함 / Enum
+    color = models.CharField(max_length=10, choices=ColorType)
+
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
