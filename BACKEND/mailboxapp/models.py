@@ -1,5 +1,5 @@
 from django.db import models
-from dev.BACKEND.accountapp.models import AppUser
+from accountapp.models import AppUser
 
 
 class MailBox(models.Model):
@@ -15,3 +15,6 @@ class MailBox(models.Model):
 
     date_created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'mailbox'

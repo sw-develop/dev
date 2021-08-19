@@ -11,3 +11,6 @@ class AppUser(models.Model):
     date_created = models.DateTimeField(default=timezone.now, null=True, blank=True)
     last_updated = models.DateTimeField(default=timezone.now, null=True, blank=True)
     email = models.EmailField(unique=True, null=True, blank=True)
+
+    class Meta:
+        db_table = 'user'
