@@ -1,14 +1,20 @@
 from django.db import models
-from django.utils import timezone
 from accountapp.models import AppUser
 
 
 class MailBox(models.Model):
-    usr = models.ForeignKey(AppUser, related_name='MailBox', on_delete=models.CASCADE)
-    mailbox_name = models.CharField(max_length=40)
-    user_nickname = models.CharField(max_length=20)
-    mailbox_url = models.URLField()
-    theme = models.CharField(max_length=20)
-    mailbox_created = models.DateTimeField(default=timezone.now)
-    last_updated = models.DateTimeField(default=timezone.now)
-    open_date = models.DateTimeField(default=timezone.now)
+    id = models.BigIntegerField(primary_key=True, db_column="mailbox_id")
+    user = models.ForeignKey(AppUser, on_delete=models.CASCADE, related_name="mailboxes")
+    nickname = models.CharField(max_length=20)
+    link_title = models.CharField(max_length=40)
+    mailbox_link = models.URLField()  # default max_length = 200
+    open_date = models.DateTimeField()
+
+    ThemeType = models.TextChoices('ThemeType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함
+    theme = models.CharField(max_length=20, choices=ThemeType.choices)
+
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'mailbox'  # default: mailboxapp_mailbox
