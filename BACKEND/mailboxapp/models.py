@@ -9,9 +9,10 @@ class MailBox(models.Model):
     link_title = models.CharField(max_length=40)
     mailbox_link = models.URLField()  # default max_length = 200
     open_date = models.DateTimeField()
+    key = models.CharField(max_length=50, db_column="mailbox_key")  # 우체통 비밀키
 
     ThemeType = models.TextChoices('ThemeType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함
-    theme = models.CharField(max_length=20, choices=ThemeType.choices)
+    theme = models.CharField(max_length=20, choices=ThemeType.choices, null=True)
 
     date_created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
