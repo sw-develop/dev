@@ -39,8 +39,6 @@ class MailboxViewSet(viewsets.ModelViewSet):
     # GenericAPIView클래스의 get_serializer_class() 메서드 오버라이딩 - 조건에 맞는 Serializer 반환
     def get_serializer_class(self):
         if self.action == 'create':
-            if self.name == 'check_secret_key':
-                return CheckMailBoxKeySerializer
             return CreateMailBoxSerializer
         if self.action == 'list':
             return ListMailBoxSerializer
@@ -75,11 +73,13 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
 
     """
-    POST mailbox/<int:mailbox_pk>/secretkey -> Serializer 필요 X 
+    POST mailbox/<int:mailbox_pk>/secretkey 
     """
     @action(detail=True, methods=['post'], name='check_secret_key', url_path='secretkey')
     def check_secret_key(self, request, pk=None):
-        serializer
+        mailbox = Mailbox.objects.get(pk=pk)
+        if(mailbox.check_mailbox_key())
+
 
 
 
