@@ -19,3 +19,6 @@ class MailBox(models.Model):
 
     class Meta:
         db_table = 'mailbox'  # default: mailboxapp_mailbox
+
+    def number_of_letter(self):  # 우체통의 편지 개수 반환 메서드
+        return self.letters.count()
