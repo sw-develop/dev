@@ -12,3 +12,10 @@ class ListLetterSerializer(serializers.ModelSerializer):
 
     def get_number_of_letter(self, obj):
         return obj.mailbox.number_of_letter()
+
+
+# 편지 작성 - content, sender, color
+class CreateLetterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Letter
+        fields = ['content', 'sender', 'color']
