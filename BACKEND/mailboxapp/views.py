@@ -4,10 +4,13 @@ import string
 from mailboxapp.models import Mailbox
 from requests import Response
 from rest_framework import viewsets, status
-from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer, CheckMailBoxKeySerializer
+from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer, \
+    CheckMailBoxKeySerializer
 
 from datetime import date
+
 from rest_framework.decorators import action
+
 
 # ViewSet 사용
 # api 다 그냥 mailbox로 통일시켜버려... my-mailbox -> mailbox로 .. 그럼 한방에 처리 가능함!
@@ -46,6 +49,7 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
     POST mailbox (우체통 생성) 
     """
+
     def perform_create_mailbox(self, request, serializer):
         # user, link_title, open_date, key 필드에 값 추가하기
         mailbox = serializer.save(
@@ -75,11 +79,9 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
     POST mailbox/<int:mailbox_pk>/secretkey 
     """
-    @action(detail=True, methods=['post'], name='check_secret_key', url_path='secretkey')
+    @action(detail=True, methods=['post'], url_path='secretkey')
     def check_secret_key(self, request, pk=None):
         mailbox = Mailbox.objects.get(pk=pk)
-        if(mailbox.check_mailbox_key())
-
-
-
-
+        if mailbox.check_mailbox_key(request.data['key']):  # 키 값이 일치한 경우
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_403_FORBIDDEN)
