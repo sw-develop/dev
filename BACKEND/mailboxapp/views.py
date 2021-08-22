@@ -5,9 +5,10 @@ from datetime import date
 from requests import Response
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
-from mailboxapp.models import Mailbox
+from mailboxapp.models import MailBox
 from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer
 from letterapp.serializers import ListLetterSerializer
+
 
 # ViewSet 사용
 # api 다 그냥 mailbox로 통일시켜버려... my-mailbox -> mailbox로 .. 그럼 한방에 처리 가능함!
@@ -47,6 +48,7 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
     POST mailbox (우체통 생성) 
     """
+
     def perform_create_mailbox(self, request, serializer):
         # user, link_title, open_date, key 필드에 값 추가하기
         mailbox = serializer.save(
@@ -61,7 +63,7 @@ class MailboxViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         # 우체통 5개까지만 생성 가능 조건 추가
-        if request.user.mailboxes.all().count() == 5: # 수정 필요 사항 - AppUser 객체 내에 해당 메서드 생성하여 호출하기
+        if request.user.mailboxes.all().count() == 5:  # 수정 필요 사항 - AppUser 객체 내에 해당 메서드 생성하여 호출하기
             return Response(status=status.HTTP_403_FORBIDDEN)
 
         serializer = self.get_serializer(data=request.data)  # CreateMailBoxSerializer
@@ -80,9 +82,10 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
     POST mailbox/<int:mailbox_pk>/secretkey 
     """
+
     @action(detail=True, methods=['post'], url_path='secretkey')
     def check_secret_key(self, request, pk=None):
-        mailbox = Mailbox.objects.get(pk=pk)
+        mailbox = MailBox.objects.get(pk=pk)
         if mailbox.check_mailbox_key(request.data['key']):  # 키 값이 일치한 경우
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_403_FORBIDDEN)
@@ -92,3 +95,13 @@ class MailboxViewSet(viewsets.ModelViewSet):
     """
     @action(detail=True, methods=['get'], url_path='letters', name='get_letters')
     def get_letters(self, request, pk=None):
+        mailbox = MailBox.objects.get(pk=pk)
+        queryset = mailbox.letters.all()  # 해당 우체통과 연관된 모든 편지 객체 반환
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data, status=status.HTTP_200_OK)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
