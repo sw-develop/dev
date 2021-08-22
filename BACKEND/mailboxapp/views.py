@@ -1,28 +1,26 @@
 import random
 import string
 
-from django.shortcuts import render
 from mailboxapp.models import Mailbox
 from requests import Response
 from rest_framework import viewsets, status
-from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer
+from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer, CheckMailBoxKeySerializer
 
 from datetime import date
-
+from rest_framework.decorators import action
 
 # ViewSet 사용
 # api 다 그냥 mailbox로 통일시켜버려... my-mailbox -> mailbox로 .. 그럼 한방에 처리 가능함!
 
-
-def get_random_open_date(): # 랜덤 우체통 공개 날짜 생성 메서드
+def get_random_open_date():  # 랜덤 우체통 공개 날짜 생성 메서드
     # 랜덤 날짜 조건 : 우체통 봉인 시점(우체통 생성 후 3일 뒤)부터 1주일 ~ 1달 후
     mailbox_close_date = date.today() + 3
     return mailbox_close_date + random.randint(7, 30)
 
 
-def get_random_key(): # 랜덤 우체통 비밀키 값 생성 메서드
+def get_random_key():  # 랜덤 우체통 비밀키 값 생성 메서드
     key_length = 6
-    string_pool = string.ascii_lowercase # 소문자
+    string_pool = string.ascii_lowercase  # 소문자
     secret_key = ""
     for i in range(key_length):
         secret_key += random.choice(string_pool)
@@ -38,17 +36,18 @@ class MailboxViewSet(viewsets.ModelViewSet):
         return queryset
 
     # Create, List Action
-    # GenericAPIView클래스의 get_serializer_class() 메서드 오버라이딩
+    # GenericAPIView클래스의 get_serializer_class() 메서드 오버라이딩 - 조건에 맞는 Serializer 반환
     def get_serializer_class(self):
         if self.action == 'create':
+            if self.name == 'check_secret_key':
+                return CheckMailBoxKeySerializer
             return CreateMailBoxSerializer
         if self.action == 'list':
             return ListMailBoxSerializer
 
     """
-    POST mailbox
+    POST mailbox (우체통 생성) 
     """
-
     def perform_create_mailbox(self, request, serializer):
         # user, link_title, open_date, key 필드에 값 추가하기
         mailbox = serializer.save(
@@ -62,7 +61,7 @@ class MailboxViewSet(viewsets.ModelViewSet):
         return mailbox.save()
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        serializer = self.get_serializer(data=request.data)  # CreateMailBoxSerializer
         serializer.is_valid(raise_exception=True)
 
         mailbox = self.perform_create_mailbox(serializer)
@@ -72,5 +71,15 @@ class MailboxViewSet(viewsets.ModelViewSet):
         return Response(response_mailbox_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     """
-    POST mailbox/<int:mailbox_pk>/secretkey
+    GET mailbox (개인의 모든 우체통 조회) - ModelViewSet 에 이미 정의되어 있음(수정 X) 
     """
+
+    """
+    POST mailbox/<int:mailbox_pk>/secretkey -> Serializer 필요 X 
+    """
+    @action(detail=True, methods=['post'], name='check_secret_key', url_path='secretkey')
+    def check_secret_key(self, request, pk=None):
+        serializer
+
+
+
