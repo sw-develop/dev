@@ -5,7 +5,7 @@ from django.shortcuts import render
 from mailboxapp.models import Mailbox
 from requests import Response
 from rest_framework import viewsets, status
-from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer
+from mailboxapp.serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer
 
 from datetime import date
 
@@ -46,7 +46,7 @@ class MailboxViewSet(viewsets.ModelViewSet):
             return ListMailBoxSerializer
 
     """
-    POST mailbox/
+    POST mailbox
     """
 
     def perform_create_mailbox(self, request, serializer):
@@ -59,14 +59,17 @@ class MailboxViewSet(viewsets.ModelViewSet):
         )
         # mailbox_link 필드에 값 추가
         mailbox.mailbox_link = mailbox.set_mailbox_link()
-        mailbox.save()
+        return mailbox.save()
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        self.perform_create_mailbox(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+        mailbox = self.perform_create_mailbox(serializer)
+        response_mailbox_serializer = GetMailBoxSerializer(mailbox)
+
+        headers = self.get_success_headers(response_mailbox_serializer.data)
+        return Response(response_mailbox_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     """
     POST mailbox/<int:mailbox_pk>/secretkey
