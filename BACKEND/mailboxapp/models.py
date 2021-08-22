@@ -7,7 +7,7 @@ class MailBox(models.Model):
     user = models.ForeignKey(AppUser, on_delete=models.CASCADE, related_name="mailboxes")
     nickname = models.CharField(max_length=20)
     link_title = models.CharField(max_length=40)
-    mailbox_link = models.URLField()  # default max_length = 200
+    mailbox_link = models.URLField(null=True)  # default max_length = 200, 형태 = mailbox/<int:mailbox_pk>/letter
     open_date = models.DateTimeField()
     key = models.CharField(max_length=50, db_column="mailbox_key")  # 우체통 비밀키
 
