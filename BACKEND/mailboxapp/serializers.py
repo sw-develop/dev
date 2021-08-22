@@ -23,5 +23,12 @@ class ListMailBoxSerializer(serializers.ModelSerializer):
         model = MailBox
         fields = ['id', 'link_title', 'mailbox_link', 'open_date', 'number_of_letter']
 
-    def get_number_of_letter(obj):
+    def get_number_of_letter(self, obj):
         return obj.number_of_letter()
+
+
+# 우체통 비밀키 일치 여부 체크
+class CheckMailBoxKeySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MailBox
+        fields = ['id', 'key']
