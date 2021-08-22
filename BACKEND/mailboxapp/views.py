@@ -51,14 +51,15 @@ class MailboxViewSet(viewsets.ModelViewSet):
 
     def perform_create_mailbox(self, request, serializer):
         # user, link_title, open_date, key 필드에 값 추가하기
-        serializer.save(
+        mailbox = serializer.save(
             user=request.user,  # 추가 - Authentication 추가해야 사용 가능함
             link_title=request.data['nickname'] + '의 우체통',
-            open_date=get_random_open_date()
-            key=
+            open_date=get_random_open_date(),
+            key=get_random_key()
         )
-
-        # mailbox_link 필드 업데이트
+        # mailbox_link 필드에 값 추가
+        mailbox.mailbox_link = mailbox.set_mailbox_link()
+        mailbox.save()
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
