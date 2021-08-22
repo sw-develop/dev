@@ -6,7 +6,7 @@ from mailboxapp.models import MailBox
 class CreateMailBoxSerializer(serializers.ModelSerializer):
     class Meta:
         model = MailBox
-        fields = '__all__'
+        fields = ['nickname']
 
 
 def get_number_of_letter(obj):
