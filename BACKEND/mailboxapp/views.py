@@ -60,6 +60,10 @@ class MailboxViewSet(viewsets.ModelViewSet):
         return mailbox.save()
 
     def create(self, request, *args, **kwargs):
+        # 우체통 5개까지만 생성 가능 조건 추가
+        if request.user.mailboxes.all().count() == 5: # 수정 필요 사항 - AppUser 객체 내에 해당 메서드 생성하여 호출하기
+            return Response(status=status.HTTP_403_FORBIDDEN)
+
         serializer = self.get_serializer(data=request.data)  # CreateMailBoxSerializer
         serializer.is_valid(raise_exception=True)
 
