@@ -8,8 +8,6 @@ WORKDIR /home/BACKEND/
 
 RUN pip install -r requirements.txt
 
-RUN
-
 RUN python manage.py migrate
 
 EXPOSE 8000
