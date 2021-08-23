@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Thumbs, Pagination } from 'swiper';
+import SwiperCore, { Thumbs, Pagination, Autoplay } from 'swiper';
 import "swiper/swiper.scss";
 import "swiper/components/thumbs/thumbs.scss"
 import "swiper/components/pagination/pagination.scss"
@@ -19,7 +19,7 @@ import Flow6 from '../../components/ServiceFlow/Flow6';
 import CreatePostboxBtn from '../../components/Btn/CreatePostboxBtn';
 import Footer from '../../components/Footer';
 
-SwiperCore.use([Thumbs ,Pagination])
+SwiperCore.use([Thumbs ,Pagination, Autoplay])
 
 
 function HowToPage() {
@@ -36,7 +36,7 @@ function HowToPage() {
                     <LogoNameHowto></LogoNameHowto>
 
                     <div>
-                        <Swiper className="service-flow" spaceBetween={0} slidesPerView={1} thumbs pagination={{ clickable: true }}>
+                        <Swiper className="service-flow" spaceBetween={0} slidesPerView={1} thumbs pagination={{ clickable: true }} autoplay={{ delay: 5000}}>
                             <SwiperSlide><Flow1></Flow1></SwiperSlide>
                             <SwiperSlide><Flow2></Flow2></SwiperSlide>
                             <SwiperSlide><Flow3></Flow3></SwiperSlide>

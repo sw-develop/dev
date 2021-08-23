@@ -42,6 +42,7 @@ function JoinPage() {
         Kakao.Auth.login({
             success: function (response) {
                 console.log(response);
+                history.push("/joininfo");
             },
             fail: function(error) {
                 alert(JSON.stringify(error))
@@ -52,10 +53,7 @@ function JoinPage() {
         <>
             <S.JoinScene>
                     <BackBtn></BackBtn>
-                <Link to="/joininfo">
                     <LogoNameJoin></LogoNameJoin>
-                    {/* 임시방편 */}
-                </Link>
                 
 
                 <JoinMent></JoinMent>
