@@ -30,9 +30,7 @@ function HowToPage() {
         <>
             <S.HowToScene>
                 <div className="fullbox">
-                    <Link to="/">
                         <BackBtn></BackBtn>
-                    </Link>
                     <Navbar></Navbar>
 
                     <LogoNameHowto></LogoNameHowto>

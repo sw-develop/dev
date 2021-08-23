@@ -52,9 +52,7 @@ function LogInPage() {
     return (
         <>
             <S.LogInScene>
-                <Link to="/">
                     <BackBtn></BackBtn>
-                </Link>
 
                 <LogoNameLogin></LogoNameLogin>
                 <LoginMent></LoginMent>

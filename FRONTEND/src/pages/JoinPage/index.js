@@ -51,9 +51,7 @@ function JoinPage() {
     return (
         <>
             <S.JoinScene>
-                <Link to="/">
                     <BackBtn></BackBtn>
-                </Link>
                 <Link to="/joininfo">
                     <LogoNameJoin></LogoNameJoin>
                     {/* 임시방편 */}
