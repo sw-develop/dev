@@ -6,7 +6,7 @@ function Flow5() {
 
   return (
     <>
-     <div className="FlowImg">
+     <div className="Flow5Img">
             <img src={flow5}></img>
     </div>
     <div className="flow5-txt">

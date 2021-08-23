@@ -54,7 +54,7 @@ function JoinPage() {
                 <Link to="/">
                     <BackBtn></BackBtn>
                 </Link>
-                <Link to="/joincomplete">
+                <Link to="/joininfo">
                     <LogoNameJoin></LogoNameJoin>
                     {/* 임시방편 */}
                 </Link>

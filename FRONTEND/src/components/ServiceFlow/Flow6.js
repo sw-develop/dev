@@ -1,5 +1,5 @@
 import React from 'react';
-import flow6 from '../../image/service-flow5.png'
+import flow6 from '../../image/service-flow6.png'
 // import * as S from './styles';
 
 function Flow6() {
