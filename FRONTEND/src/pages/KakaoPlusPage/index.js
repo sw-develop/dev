@@ -27,7 +27,10 @@ function KakaoPlus() {
 
                     <KakaoPlusImg></KakaoPlusImg>
 
-                    <GoHomeBtn></GoHomeBtn>
+                    <Link to="/howto">
+                        <GoHomeBtn></GoHomeBtn>
+                    </Link>
+                    
                     
 
                 </div>

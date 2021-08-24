@@ -57,7 +57,8 @@
 
 :root {
   --main-bg-color: #fff;
-  --main-element-color: #424355;
+  --poppy-purple: #A38AEE;
+  --main-txt-color: #4B4362;
   --dark-bg-color: #424355;
   --dark-txt-color: #fff;
 }
@@ -96,7 +97,7 @@
 .Flow5Img img{
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 3.12rem;
 }
 
 .swiper-container {
@@ -151,7 +152,7 @@
 }
 
 .nav-menu {
-  background: var(--main-element-color);
+  background: #7357C6;
   /* opacity: 0; */
   width: 19.8125rem;
   height: 100%;
@@ -259,7 +260,7 @@
 
   /* indego */
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .logo-name-dark {
@@ -331,7 +332,7 @@
   font-size: 0.9rem;
   line-height: 140.5%;
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .bird img {
@@ -372,7 +373,7 @@ font-weight: normal; */
 
   /* indego */
 
-  background: var(--main-element-color);
+  background: var(--poppy-purple);
   border-radius: 30px;
   color: var(--main-bg-color);
   text-align: center;
@@ -393,7 +394,7 @@ font-weight: normal; */
 
   /* indego */
 
-  background: var(--main-element-color);
+  background: var(--poppy-purple);
   border-radius: 30px;
   color: var(--main-bg-color);
   text-align: center;
@@ -414,7 +415,7 @@ font-weight: normal; */
 
   /* indego */
 
-  background: var(--main-element-color);
+  background: var(--poppy-purple);
   border-radius: 30px;
   color: var(--dark-txt-color);
   text-align: center;
@@ -433,11 +434,11 @@ font-weight: normal; */
   left: calc(50% - 10.5rem);
   top: 44.5rem;
 
-  background: var(--main-bg-color);
-  color: var(--main-element-color);
+  background: #fff;
+  color: var(--main-txt-color);
   /* indego */
 
-  border: 2px solid var(--main-element-color);
+  border: 2px solid var(--poppy-purple);
   box-sizing: border-box;
   border-radius: 30px;
   text-align: center;
@@ -505,7 +506,7 @@ background: #4243554D;
 
   /* indego */
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .join-ment-small {
@@ -525,7 +526,7 @@ background: #4243554D;
 
   /* indego */
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .join-complete-img {
@@ -547,7 +548,7 @@ background: #4243554D;
   font-size: 1.687289088863892rem;
   line-height: 1.968503937007874rem;
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .join-complete-ment-small {
@@ -561,7 +562,7 @@ background: #4243554D;
   font-size: 1.012373453318335rem;
   line-height: 1.55rem;
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .service-flow {
@@ -581,7 +582,7 @@ background: #4243554D;
   line-height: 140.5%;
 
   font-size: 1.124859392575928rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .flow2-txt {
@@ -593,7 +594,7 @@ background: #4243554D;
   line-height: 158%;
 
   font-size: 1.012373453318335rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .flow3-txt {
@@ -605,7 +606,7 @@ background: #4243554D;
   line-height: 158%;
 
   font-size: 1.012373453318335rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .flow4-txt {
@@ -617,7 +618,7 @@ background: #4243554D;
   line-height: 158%;
 
   font-size: 1.012373453318335rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .flow5-txt {
@@ -629,20 +630,16 @@ background: #4243554D;
   line-height: 158%;
 
   font-size: 1.012373453318335rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 /* 
 .swiper-pagination-bullet {
   opacity: 0.2;
 } */
 
-:root {
-  --swiper-theme-color: #87AFBA !important;
-}
-
 .swiper-pagination-bullet {
-  background: #D4E2E6 !important;
-  opacity: 1 !important;
+  background: var(--poppy-purple) !important;
+  opacity: 0.3 !important;
   width: 0.4499437570303712rem !important;
   height: 0.4499437570303712rem !important;
   /* transform: translateY(-0.1687289088863892rem); */
@@ -651,7 +648,7 @@ background: #4243554D;
 }
 
 .swiper-pagination-bullet-active {
-  background: #87AFBA !important;
+  background: var(--poppy-purple) !important;
   opacity: 1 !important;
   width: 0.7874015748031496rem !important;
   height: 0.7874015748031496rem !important;
@@ -776,7 +773,7 @@ background: #4243554D;
   position: absolute;
   top: 13.3rem;
   left: 1.75rem;
-  background-color: var(--main-element-color);
+  background-color: #4B4362;
 }
 
 .create-post-box-ment {
@@ -839,7 +836,7 @@ background: #4243554D;
   left: calc(50% - 10.55rem);
   top: 7.9rem;
   border-radius: 32.5px;
-  background-color: var(--main-element-color);
+  background-color: #4B4362;
   opacity: 0.95;
 
   font-family: "Cafe24 Ssurround air";
@@ -857,7 +854,7 @@ background: #4243554D;
   left: calc(50% - 10.55rem);
   top: 36.83rem;
   border-radius: 32.5px;
-  background-color: var(--main-element-color);
+  background-color: #4B4362;
   opacity: 0.95;
 
   font-family: "Cafe24 Ssurround air";
@@ -895,7 +892,7 @@ background: #4243554D;
   font-size: 1rem;
   line-height: 1.48rem;
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 
   z-index: 2;
 }
@@ -948,7 +945,7 @@ background: #4243554D;
   font-size: 1rem;
   line-height: 1.48rem;
 
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .kakao-plus-img img {
@@ -981,7 +978,7 @@ background: #4243554D;
   top: 8.353rem;
   font-size: 1.1rem;
   line-height: 1.77rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .bird-tag {
@@ -990,7 +987,7 @@ background: #4243554D;
   top: 12.471rem;
   font-size: 1.1rem;
   line-height: 1.77rem;
-  color: var(--main-element-color);
+  color: var(--main-txt-color);
 }
 
 .poppy-tag-img {
@@ -1195,6 +1192,7 @@ button#dropdown-basic-button {
   border-right: .35em solid transparent;
   border-bottom: 0;
   border-left: .35em solid transparent;
+  color: var(--poppy-purple);
 }
 
 .dropdown-toggle:empty::after {
