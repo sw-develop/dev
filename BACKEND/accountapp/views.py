@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
-from BACKEND.settings import SECRET_KEY
+from BACKEND.settings.deploy import SECRET_KEY
 from accountapp.models import AppUser
 
 
@@ -39,7 +39,7 @@ class KakaoLoginView(View):  # 카카오 로그인
             encoded_jwt = jwt.encode({'id': new_user_info.id}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
             none_member_type = 1
             return JsonResponse({
-                'access_token': encoded_jwt.decode('UTF-8'),
+                'access_token': encoded_jwt,
                 'user_name': new_user_info.name,
                 'user_pk': new_user_info.id,
             }, status=200)
