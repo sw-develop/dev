@@ -1,6 +1,6 @@
 # 장고 백엔드 API 서버 구축에 도커 사용하기 4
 
-> 관련 링크 : [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
+> [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
 
 
 
@@ -96,4 +96,4 @@ secrets:
 
 
 
-해당 프로젝트에서는 Nginx conf 에 최소한의 설정만 적용하여, 배포를 하였다. 이 부분에 대해 좀 더 조사가 필요하다!
+해당 프로젝트에서는 Nginx conf 에 최소한의 설정만 적용하여, 배포를 하였는데, 좀 더 공부하여 새로운 것을 적용할 것이다! (프론트를 같이 붙인다거나)
