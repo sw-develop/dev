@@ -2,7 +2,7 @@
 
 
 
-> 관련 링크 : [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
+> [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
 
 
 
@@ -62,13 +62,13 @@ http {
 
       container: /etc/nginx/nginx.conf -> host: /home/(설정한 디렉토리명)/nginx.conf
 
-3. `django_gunicorn_container` 컨테이너 생성
+3. `django_container_gunicorn` 컨테이너 생성
 
    1. 네트워크 설정
 
       `nginx_django 네트워크` 설정
 
-즉, `django_gunicorn_container`를 만들 때, `nginx_django 네트워크` 설정을 해주고, `nginx_container`를 만들 때, `nginx_django 네트워크` 설정을 또 해주면 되는 셈이다.
+즉, `django_container_gunicorn`를 만들 때, `nginx_django 네트워크` 설정을 해주고, `nginx_container`를 만들 때, `nginx_django 네트워크` 설정을 또 해주면 되는 셈이다.
 
 
 
@@ -92,6 +92,5 @@ http {
   - **도커 영역 내에서 데이터 동기화를 해주는 기능**
   - **도커 내부**에 Volume을 심어서 이 안의 데이터와 서로 다른 컨테이너들에 있는 데이터들을 서로 동기화하여 관리
 
-  
 
 다음은 `MariaDB`에 대한 작업을 해줘야 한다.
