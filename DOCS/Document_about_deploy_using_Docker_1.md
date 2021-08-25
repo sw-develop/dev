@@ -55,27 +55,27 @@
 >
 > ```dockerfile
 > FROM python:3.9.0
-> 
+>
 > WORKDIR /home/
-> 
+>
 > RUN git clone https://github.com/(깃헙 레포지토리)
-> 
+>
 > WORKDIR /home/(pj directory)
-> 
+>
 > RUN pip install -r requirements.txt
-> 
+>
 > RUN echo "SECRET_KEY=(~~~)" > .env
-> 
+>
 > RUN python manage.py migrate
-> 
+>
 > EXPOSE 8000 # 해당 포트를 사용할 수 있도록 노출
-> 
+>
 > CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 > ```
 >
 > 
 
-도커파일로 django_test_image:1 이미지를 만들고, 이 이미지를 이용해서 django_container를 만든다. 이 때, 
+도커파일로 `django_test_image:1` 이미지를 만들고, 이 이미지를 이용해서 django_container를 만든다. 이 때, 
 
 ```
 host:8000 -> container:8000
@@ -93,9 +93,7 @@ host:8000 -> container:8000
 
 배포환경에서 사용하면 안되는 장고의 `runserver` 명령을 Dockerfile에서 사용하고 있기 때문에, 이에 대한 처리를 해줘야 한다. 공식문서에서 다음과 같이 배포 환경에서 `runserver` 명령을 사용하지 말라고 이야기하고 있다.
 
-```
-DO NOT USE THIS SERVER IN A PRODUCTION SETTING. It has not gone through security audits or performance tests. (And that’s how it’s gonna stay. We’re in the business of making Web frameworks, not Web servers, so improving this server to be able to handle a production environment is outside the scope of Django.)
-```
+> DO NOT USE THIS SERVER IN A PRODUCTION SETTING. It has not gone through security audits or performance tests. (And that’s how it’s gonna stay. We’re in the business of making Web frameworks, not Web servers, so improving this server to be able to handle a production environment is outside the scope of Django.)
 
 이 문제를 어떻게 해결할까?
 
