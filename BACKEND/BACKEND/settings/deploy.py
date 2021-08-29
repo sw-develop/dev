@@ -8,6 +8,7 @@ def read_secret(secret_name):
     file.close()
     return secret
 
+
 # secret key 보호를 위한 작업
 env = environ.Env(
     # set casting, default value
@@ -26,7 +27,7 @@ environ.Env.read_env(
 SECRET_KEY = read_secret("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,4 +43,8 @@ DATABASES = {
         'HOST': 'mariadb',
         'PORT': '3306',
     }
+}
+
+SIMPLE_JWT = {
+    'SIGNING_KEY': SECRET_KEY,
 }
