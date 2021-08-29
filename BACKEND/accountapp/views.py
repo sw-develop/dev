@@ -30,32 +30,36 @@ class KakaoLoginView(View):  # 카카오 로그인
         headers = ({'Authorization': f"Bearer {access_token}"})
         url = "https://kapi.kakao.com/v2/user/me"  # Authorization(프론트에서 받은 토큰)을 이용해서 회원의 정보를 확인하기 위한 카카오 API 주소
         response = requests.request("POST", url, headers=headers)  # API를 요청하여 회원의 정보를 response에 저장
-        user = response.json()
+        user_info_by_kakao = response.json()
 
-        if AppUser.objects.filter(id=user['id']).exists():  # 기존에 소셜로그인을 했었는지 확인
-            user_info = AppUser.objects.get(id=user['id'])
+        if User.objects.filter(username=user_info_by_kakao['id']).exists():  # 기존에 소셜로그인을 했었는지 확인
+            AuthUser_obj = User.objects.get(username=user_info_by_kakao['id'])
+            AppUser_obj = AppUser.objects.get(user=AuthUser_obj)
 
-            encoded_jwt = jwt.encode({'id': user_info.id}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
+            encoded_jwt = jwt.encode({'id': AuthUser_obj.username}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
             return JsonResponse({  # jwt토큰, 이름, 타입 프론트엔드에 전달
                 'access_token': encoded_jwt,
-                'user_name': user_info.name,
-                'user_pk': user_info.id
+                'user_name': AppUser_obj.name,
+                'user_pk': AuthUser_obj.id
             }, status=200)
 
         else:
-            new_user_info = AppUser(
-                id=user['id'],
-                name=user['properties']['nickname'],
-                email=user['properties'].get('email', None)
+            new_AuthUser_obj = User.objects.create_user(
+                username=user_info_by_kakao['id'],
+                password=SECRET_KEY,
             )
-            new_user_info.save()
 
-            encoded_jwt = jwt.encode({'id': new_user_info.id}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
-            none_member_type = 1
-            return JsonResponse({
+            new_AppUser_obj = AppUser(
+                user=new_AuthUser_obj,
+                name=user_info_by_kakao['properties']['nickname'],
+            )
+            new_AppUser_obj.save()
+
+            encoded_jwt = jwt.encode({'id': new_AuthUser_obj.username}, SECRET_KEY, algorithm='HS256')  # jwt토큰 발행
+            return JsonResponse({  # jwt토큰, 이름, 타입 프론트엔드에 전달
                 'access_token': encoded_jwt,
-                'user_name': new_user_info.name,
-                'user_pk': new_user_info.id,
+                'user_name': new_AppUser_obj.name,
+                'user_pk': new_AuthUser_obj.id
             }, status=200)
 
 
