@@ -25,6 +25,8 @@ from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, Ou
 
 @method_decorator(csrf_exempt, name='dispatch')
 class KakaoLoginView(View):  # 카카오 로그인
+    permission_classes = [AllowAny]
+
     def post(self, request):
         access_token = request.headers["Authorization"]
         headers = ({'Authorization': f"Bearer {access_token}"})
