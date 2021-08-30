@@ -2,7 +2,7 @@
 
 > 주의 : local 환경에서는 
 >
-> 1. `BACKEND/settings/__init__.py`에서 **from .local import ** 로 수정
+> 1. `BACKEND/settings/__init__.py`에서 **from .local import** 로 수정
 > 2. `accountapp/views.py`에서 **from BACKEND.settings.local import SECRET_KEY**로 수정
 >
 > 주의 : 배포 환경에서 superuser 생성하기
