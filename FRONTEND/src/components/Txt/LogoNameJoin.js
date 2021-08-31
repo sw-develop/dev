@@ -3,12 +3,12 @@ import React from 'react';
 
 function LogoNameJoin() {
 
-  return (
-    <>
-     <div className="logo-name">회원가입</div>
+    return (
+        <>
+            <div className="logo-name">회원가입</div>
 
-    </>
-  );
+        </>
+    );
 }
 
 export default LogoNameJoin;

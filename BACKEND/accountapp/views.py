@@ -76,18 +76,20 @@ class LoginView(APIView):  # 로그인
         response = requests.request("POST", url, headers=headers)  # POST 요청하여 회원 정보 response에 저장
         return response.json()
 
-    # DB에 있는지 판별
+    # DB에 있는지 판별 (auth_user)
     def checkUserInDB(self, kakao_user):
         try:
-            user = User.objects.get(username=kakao_user['id'])
-            return user, True
+            auth_user = User.objects.get(username=kakao_user['id'])
+            app_user = AppUser.objects.get(pk=auth_user)
+            return auth_user, app_user, True
         except User.DoesNotExist:  # 신규 회원일 때
-            user = User.objects.create_user(
+            auth_user = User.objects.create_user(
                 kakao_user['id'],
                 'test@gmail.com',
                 'poppymail'
             )
-            return user, False
+            app_user = AppUser.objects.create(user=User.objects.get(pk=auth_user.id))
+            return auth_user, app_user, False
 
     # simple-JWT을 사용해 토큰 생성 해주는 역할만 수행하면 됨
     def createJWT(self, user):
@@ -102,21 +104,28 @@ class LoginView(APIView):  # 로그인
 
     def post(self, request):
         kakao_user = self.getUserFromKakao(request)
-        user, check = self.checkUserInDB(kakao_user)
+        auth_user, app_user, check = self.checkUserInDB(kakao_user)
 
-        if check:
+        if check:  # 기존 사용자
             is_new = 'false'
-        else:
+            if app_user.check_mailbox_open_today():
+                mailbox_open_today = 'true'
+            else:
+                mailbox_open_today = 'false'
+        else:  # 신규 사용자
             is_new = 'true'
+            mailbox_open_today = 'false'
 
-        response = self.createJWT(user)
+        response = self.createJWT(auth_user)
 
         return Response(
             data={
                 'access': response['access'],
                 'refresh': response['refresh'],
                 'is_new': is_new,
-                'user_id': user.id
+                'user_id': auth_user.id,
+                'username': app_user.name,
+                'mailbox_open_today': mailbox_open_today
             },  # serializer.data와 동일한 형태
             status=status.HTTP_200_OK
         )
@@ -127,12 +136,6 @@ class AddUserInfoView(UpdateAPIView):  # 사용자 정보 추가 입력(업데�
 
     queryset = AppUser.objects.all()
     serializer_class = AddUserInfoSerializer
-
-    def patch(self, request, *args, **kwargs):
-        if AppUser.objects.filter(pk=request.user.id).exists() is False:  # 해당 id 값의 AppUser 객체가 없는 경우
-            AppUser.objects.create(user=User.objects.get(pk=request.user.id))
-
-        return self.partial_update(request, *args, **kwargs)
 
 
 class LogoutView(APIView):  # 로그아웃
