@@ -1,5 +1,9 @@
 # Docker 배포 환경에서 django admin 페이지에 css 적용
 
+> 참고 : [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
+
+
+
 ## 문제 상황
 
 해당 프로젝트는 크게 3종류의 container가 구동되고 있다. 
@@ -22,7 +26,7 @@
 
   ![admin2](./imgs_for_documents/admin2.jpg)
 
-사용자에게 보여주는 페이지도 아니니 그냥 써도 되지 않을까? 정도껏 못생기면 참고 사용하겠지만, 개발자도 사용하기에 불편할 정도로 못생겨 버려서, 생산성을 떨어뜨리는 수준이라면 수고롭더라도 바꿔주어야 맞다.
+사용자에게 보여주는 페이지도 아니니 그냥 써도 되지 않을까? 정도껏 못생기면 참고 사용하겠지만.. 개발자가 이용하기에도 불편할 정도의 흉물스러움이라 생산성을 떨어뜨리는 수준이라면, 조금 수고롭더라도 바꿔주어야 맞겠다.
 
 
 
@@ -200,5 +204,8 @@ static으로 요청이 온다면, 컨테이너 내에 `/data/static/` 경로에 
   ```
 
 
-
 이렇게 django admin 페이지에서 필요한 css 정적파일들이 `django_container_gunicorn`으로부터 넘어 오지 않아 생기는 문제를 해결하게 된다.
+
+- 속 시원한 화면
+
+![admin3](./imgs_for_documents/admin3.jpg)

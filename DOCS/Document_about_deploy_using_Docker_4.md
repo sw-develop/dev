@@ -1,6 +1,6 @@
 # 장고 백엔드 API 서버 구축에 도커 사용하기 4
 
-> [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
+> 참고 : [실용주의 프로그래머](https://www.youtube.com/channel/UCmm6VRoi59BUHDPoa3k4VPw/videos)
 
 
 
