@@ -7,7 +7,7 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
 # 로컬에서 돌릴 때, 아래 from BACKEND.settings.local import SECRET_KEY로 수정!!!!
-from BACKEND.settings.deploy import SECRET_KEY
+from BACKEND.settings.local import SECRET_KEY
 from accountapp.models import AppUser
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
@@ -79,8 +79,9 @@ class LoginView(APIView):  # 로그인
     # DB에 있는지 판별 (auth_user)
     def checkUserInDB(self, kakao_user):
         try:
-            user = User.objects.get(username=kakao_user['id'])
-            return user, True
+            auth_user = User.objects.get(username=kakao_user['id'])
+            app_user = AppUser.objects.get(pk=auth_user)
+            return auth_user, app_user, True
         except User.DoesNotExist:  # 신규 회원일 때
             auth_user = User.objects.create_user(
                 kakao_user['id'],
