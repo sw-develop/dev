@@ -19,14 +19,14 @@ class LetterRequestView(APIView):
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # 우체통 동봉된 이후에 유저의 접근!!
-            if datetime.date(datetime.now()) > mailbox_obj.date_created + timedelta(hours=72):
+            if datetime.now() > mailbox_obj.date_created + timedelta(hours=72):
                 return HttpResponse("No! User accesses after mailbox has been enclosed", status=400)
 
             # ok response
             RESPONSE_DATA = dict()
             RESPONSE_DATA['mailbox_pk'] = mailbox_obj.id
             RESPONSE_DATA['nickname'] = mailbox_obj.nickname
-            return HttpResponse(dumps(RESPONSE_DATA), {'mailbox_pk': mailbox_obj.id})
+            return HttpResponse(dumps(RESPONSE_DATA, indent=4), {'mailbox_pk': mailbox_obj.id})
 
             # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 key가 DB에 없음)
         except MailBox.DoesNotExist:
