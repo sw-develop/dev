@@ -106,10 +106,15 @@ class LoginView(APIView):  # 로그인
         kakao_user = self.getUserFromKakao(request)
         auth_user, app_user, check = self.checkUserInDB(kakao_user)
 
-        if check:
+        if check:  # 기존 사용자
             is_new = 'false'
-        else:
+            if app_user.check_mailbox_open_today():
+                mailbox_open_today = 'true'
+            else:
+                mailbox_open_today = 'false'
+        else:  # 신규 사용자
             is_new = 'true'
+            mailbox_open_today = 'false'
 
         response = self.createJWT(auth_user)
 
@@ -119,7 +124,8 @@ class LoginView(APIView):  # 로그인
                 'refresh': response['refresh'],
                 'is_new': is_new,
                 'user_id': auth_user.id,
-                'username': app_user.name
+                'username': app_user.name,
+                'mailbox_open_today': mailbox_open_today
             },  # serializer.data와 동일한 형태
             status=status.HTTP_200_OK
         )
