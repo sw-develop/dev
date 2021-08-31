@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from json import dumps
 from django.http import HttpResponse
 from rest_framework.permissions import AllowAny
@@ -19,7 +19,7 @@ class LetterRequestView(APIView):
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # 우체통 동봉된 이후에 유저의 접근!!
-            if datetime.date(datetime.now()) > mailbox_obj.open_date:
+            if datetime.date(datetime.now()) > mailbox_obj.date_created + timedelta(hours=72):
                 return HttpResponse("No! User accesses after mailbox has been enclosed", status=400)
 
             # ok response
