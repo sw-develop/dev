@@ -3,19 +3,16 @@ services:
   ngnix:
     image: nginx:1.19.5
     volumes:
-      - /home/nginx_setting/nginx.conf:/etc/nginx/nginx.conf
-      - static-volume:/data/static
+      - /home/poppy_backend/nginx.conf:/etc/nginx/nginx.conf
     networks:
       - network
     ports:
       - 80:80
 
   django_container_gunicorn:
-    image: django_test_image:1
+    image: django_test_image:5
     networks:
       - network
-    volumes:
-      - static-volume:/home/dev/BACKEND/staticfiles
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
@@ -39,8 +36,9 @@ networks:
   network:
 
 volumes:
-  maria-database:
   static-volume:
+  media-volume:
+  maria-database:
 
 secrets:
   DJANGO_SECRET_KEY:
