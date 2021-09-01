@@ -24,7 +24,11 @@ class LetterRequestView(APIView):
             RESPONSE_DATA = dict()
             RESPONSE_DATA['mailbox_pk'] = mailbox_obj.id
             RESPONSE_DATA['nickname'] = mailbox_obj.nickname
-            return HttpResponse(dumps(RESPONSE_DATA, indent=4), {'mailbox_pk': mailbox_obj.id})
+            return HttpResponse(
+                dumps(RESPONSE_DATA, indent=4),
+                content_type=u"application/json; charset=utf-8",
+                status=200
+            )
 
             # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 key가 DB에 없음)
         except MailBox.DoesNotExist:
