@@ -34,7 +34,7 @@ class LetterRequestView(APIView):
                 status=200
             )
 
-            # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 key가 DB에 없음)
+        # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 random_strkey가 DB에 없음)
         except MailBox.DoesNotExist:
             return HttpResponse(
                 "No! The requested mailbox not exists in DB",
@@ -57,14 +57,14 @@ class LetterRequestView(APIView):
             )
             letter_obj.save()
             return HttpResponse(
-                "Ok! Save in DB successfully",
-                content_type = u"application/json; charset=utf-8",
+                "Ok! Successfully saved to DB",
+                content_type=u"application/json; charset=utf-8",
             )
 
-            # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 key가 DB에 없음)
+        # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 random_strkey가 DB에 없음)
         except MailBox.DoesNotExist:
             return HttpResponse(
-                "No! The mailbox requested not exists in DB",
+                "No! The requested mailbox not exists in DB",
                 content_type=u"application/json; charset=utf-8",
                 status=400
             )
