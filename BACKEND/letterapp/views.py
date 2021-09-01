@@ -43,9 +43,7 @@ class LetterRequestView(APIView):
                 status=400
             )
 
-    def post(self, request, mailbox_pk):
-        random_strkey = request.GET['key']
-
+    def post(self, request, mailbox_pk, random_strkey):
         try:
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
