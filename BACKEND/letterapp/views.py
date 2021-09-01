@@ -12,9 +12,7 @@ class LetterRequestView(APIView):
 
     # url에 적힌 key로 메일박스에서 해당 mailbox pk 있는지 뒤져서
     # 있으면 -> ok, 없으면 -> no such mailbox in DB
-    def get(self, request, mailbox_pk):
-        random_strkey = request.GET['key']
-
+    def get(self, request, mailbox_pk, random_strkey):
         try:
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 

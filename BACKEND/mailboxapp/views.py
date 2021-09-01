@@ -70,7 +70,7 @@ class MailBoxViewSet(viewsets.ModelViewSet):
         # key, mailbox_link 필드에 값 추가
         random_key = get_random_key()
         mailbox.key = random_key
-        mailbox.mailbox_link = mailbox.set_mailbox_link() + '/?key=' + random_key
+        mailbox.mailbox_link = mailbox.set_mailbox_link() + '/' + random_key
         mailbox.save()
         return mailbox
 
