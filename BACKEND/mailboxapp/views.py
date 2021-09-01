@@ -18,7 +18,7 @@ def get_random_open_date():  # 랜덤 우체통 공개 날짜 생성 메서드
 
 def get_random_key():  # 우체통 별 랜덤 키 값 생성 메서드
     key_length = 8
-    string_pool = string.ascii_letters + string.digits  # 대소문자 + 숫자
+    string_pool = string.ascii_lowercase + string.digits  # 소문자 + 숫자
     random_key = ""
     for i in range(key_length):
         random_key += random.choice(string_pool)

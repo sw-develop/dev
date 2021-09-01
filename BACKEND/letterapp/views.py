@@ -14,6 +14,7 @@ class LetterRequestView(APIView):
     # 있으면 -> ok, 없으면 -> no such mailbox in DB
     def get(self, request, mailbox_pk, random_strkey):
         try:
+            print(random_strkey)
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # 우체통 동봉된 이후에 유저의 접근!!
