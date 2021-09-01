@@ -14,7 +14,6 @@ class LetterRequestView(APIView):
     # 있으면 -> ok, 없으면 -> no such mailbox in DB
     def get(self, request, mailbox_pk, random_strkey):
         try:
-            print(random_strkey)
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # 우체통 동봉된 이후에 유저의 접근!!
@@ -52,12 +51,14 @@ class LetterRequestView(APIView):
                 mailbox=mailbox_obj,
                 content=request.data['content'],
                 sender=request.data['sender'],
-                color=request.data['color'],
+                receiver=request.data['receiver'],
+                color=request.data['color']
             )
             letter_obj.save()
             return HttpResponse(
                 "Ok! Successfully saved to DB",
                 content_type=u"application/json; charset=utf-8",
+                status=200
             )
 
         # 유저가 잘못된 url을 입력하여 접근 (url에 적힌 random_strkey가 DB에 없음)
