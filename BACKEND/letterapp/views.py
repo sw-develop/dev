@@ -20,7 +20,6 @@ class LetterRequestView(APIView):
             if datetime.now() > mailbox_obj.date_created + timedelta(hours=72):
                 return HttpResponse(
                     "No! User accesses after mailbox has been enclosed",
-                    content_type=u"application/json; charset=utf-8",
                     status=400
                 )
 
@@ -38,7 +37,6 @@ class LetterRequestView(APIView):
         except MailBox.DoesNotExist:
             return HttpResponse(
                 "No! The requested mailbox not exists in DB",
-                content_type=u"application/json; charset=utf-8",
                 status=400
             )
 
@@ -57,7 +55,6 @@ class LetterRequestView(APIView):
             letter_obj.save()
             return HttpResponse(
                 "Ok! Successfully saved to DB",
-                content_type=u"application/json; charset=utf-8",
                 status=200
             )
 
@@ -65,6 +62,5 @@ class LetterRequestView(APIView):
         except MailBox.DoesNotExist:
             return HttpResponse(
                 "No! The requested mailbox not exists in DB",
-                content_type=u"application/json; charset=utf-8",
                 status=400
             )
