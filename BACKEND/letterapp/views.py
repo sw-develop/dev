@@ -5,6 +5,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from letterapp.models import Letter
 from mailboxapp.models import MailBox
+from .serializers import CreateLetterSerializer
 
 
 class LetterRequestView(APIView):
@@ -45,14 +46,10 @@ class LetterRequestView(APIView):
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # ok response
-            letter_obj = Letter.objects.create(
-                mailbox=mailbox_obj,
-                content=request.data['content'],
-                sender=request.data['sender'],
-                receiver=request.data['receiver'],
-                color=request.data['color']
-            )
-            letter_obj.save()
+            serializer = CreateLetterSerializer(data=request.data)  # CreateLetterSerializer
+            serializer.is_valid(raise_exception=True)
+            serializer.save(mailbox=mailbox_obj)
+
             return HttpResponse(
                 "Ok! Successfully saved to DB",
                 status=200
