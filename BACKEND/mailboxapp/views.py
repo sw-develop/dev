@@ -81,7 +81,7 @@ class MailBoxViewSet(viewsets.ModelViewSet):
     """
 
     @action(detail=True, methods=['get'], url_path='letters', name='get_letters')
-    def get_letters(self, pk=None):
+    def get_letters(self, request, pk=None):
         mailbox = MailBox.objects.get(pk=pk)
         mailbox.checked = True
         mailbox.save()
