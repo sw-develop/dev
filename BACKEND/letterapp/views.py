@@ -73,4 +73,7 @@ class UpdateLetterView(APIView):  # 특정 편지 읽음 처리
         if letter.checked is not True:
             letter.checked = True
             letter.save()
-        return Response(status=status.HTTP_200_OK)
+            content = {'읽음처리 업데이트 성공'}
+        else:
+            content = {'이미 읽음처리 되었음'}
+        return Response(content, status=status.HTTP_200_OK)
