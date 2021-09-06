@@ -8,7 +8,7 @@ class ListLetterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Letter
-        fields = ['id', 'mailbox', 'content', 'sender', 'receiver', 'color', 'number_of_letter']
+        fields = ['id', 'mailbox', 'content', 'sender', 'receiver', 'color', 'checked', 'number_of_letter']
 
     def get_number_of_letter(self, obj):
         return obj.mailbox.number_of_letter()
