@@ -77,13 +77,20 @@ class MailBoxViewSet(viewsets.ModelViewSet):
     """
 
     """
-    GET mailbox/<int:mailbox_pk>/letters/ - 특정 우체통 편지 조회 
+    GET mailbox/<int:mailbox_pk>/letters/ - 특정 우체통 편지 조회(=우체통 열기)
     """
 
     @action(detail=True, methods=['get'], url_path='letters', name='get_letters')
     def get_letters(self, pk=None):
         mailbox = MailBox.objects.get(pk=pk)
+        mailbox.checked = True
+        mailbox.save()
+
         queryset = mailbox.letters.all()  # 해당 우체통과 연관된 모든 편지 객체 반환
+        first_letter = queryset.first()
+        if first_letter is not None:
+            first_letter.checked = True  # 첫 번째 편지 읽음 처리
+            first_letter.save()
 
         page = self.paginate_queryset(queryset)
         if page is not None:
