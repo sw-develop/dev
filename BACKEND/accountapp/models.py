@@ -26,5 +26,19 @@ class AppUser(models.Model):
                 return True
         return False
 
+    def check_mailbox_today(self):  # 확인해야할 우체통이 있는지 체크
+        # 오픈된 우체통이고 아직 사용자가 확인안했을 때
+        for mailbox in self.mailboxes.all():
+            if mailbox.open_date <= date.today() and mailbox.checked is False:
+                return True
+        return False
+
     def number_of_mailboxes(self):  # 우체통 개수 반환 메서드
         return self.mailboxes.count()
+
+    def number_of_letters_in_unopened_mailbox(self):  # 오픈되지 않은 우체통에 담긴 편지 개수 반환 메서드
+        total_letter = 0
+        for mailbox in self.mailboxes.filter(
+                open_date__gt=date.today()):  # SQL : SELECT ... WHERE open_date > date.today()
+            total_letter += mailbox.number_of_letter()
+        return total_letter

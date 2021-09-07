@@ -14,6 +14,8 @@ class MailBox(models.Model):
     ThemeType = models.TextChoices('ThemeType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함
     theme = models.CharField(max_length=20, choices=ThemeType.choices, null=True)
 
+    checked = models.BooleanField(default=False)
+
     date_created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
 

@@ -8,9 +8,9 @@ class Letter(models.Model):
     mailbox = models.ForeignKey(MailBox, on_delete=models.CASCADE, related_name='letters')
     content = models.TextField()
     sender = models.CharField(max_length=20)
-
-    ColorType = models.TextChoices('ColorType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함 / Enum
-    color = models.CharField(max_length=10, choices=ColorType.choices)
+    receiver = models.CharField(max_length=20)
+    color = models.CharField(max_length=20)
+    checked = models.BooleanField(default=False)
 
     date_created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
