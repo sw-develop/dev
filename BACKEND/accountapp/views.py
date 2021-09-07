@@ -108,13 +108,13 @@ class LoginView(APIView):  # 로그인
 
         if check:  # 기존 사용자
             is_new = 'false'
-            if app_user.check_mailbox_open_today():
-                mailbox_open_today = 'true'
+            if app_user.check_mailbox_today():
+                check_mailbox_today = 'true'
             else:
-                mailbox_open_today = 'false'
+                check_mailbox_today = 'false'
         else:  # 신규 사용자
             is_new = 'true'
-            mailbox_open_today = 'false'
+            check_mailbox_today = 'false'
 
         response = self.createJWT(auth_user)
 
@@ -125,7 +125,7 @@ class LoginView(APIView):  # 로그인
                 'is_new': is_new,
                 'user_id': auth_user.id,
                 'username': app_user.name,
-                'mailbox_open_today': mailbox_open_today
+                'check_mailbox_today': check_mailbox_today
             },  # serializer.data와 동일한 형태
             status=status.HTTP_200_OK
         )

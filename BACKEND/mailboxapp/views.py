@@ -7,7 +7,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from .models import MailBox
 from .serializers import CreateMailBoxSerializer, ListMailBoxSerializer, GetMailBoxSerializer
-from letterapp.serializers import ListLetterSerializer, CreateLetterSerializer
+from letterapp.serializers import ListLetterSerializer
 
 
 def get_random_open_date():  # 랜덤 우체통 공개 날짜 생성 메서드
@@ -33,8 +33,6 @@ class MailBoxViewSet(viewsets.ModelViewSet):
     # GenericAPIView클래스의 get_serializer_class() 메서드 오버라이딩 - 조건에 맞는 Serializer 반환
     def get_serializer_class(self):
         if self.request.method == 'POST':
-            if self.name == 'create_letter':
-                return CreateLetterSerializer
             return CreateMailBoxSerializer
         elif self.request.method == 'GET':
             if self.name == 'get_letters':
@@ -79,13 +77,20 @@ class MailBoxViewSet(viewsets.ModelViewSet):
     """
 
     """
-    GET mailbox/<int:mailbox_pk>/letters - 특정 우체통 편지 조회 
+    GET mailbox/<int:mailbox_pk>/letters/ - 특정 우체통 편지 조회(=우체통 열기)
     """
 
     @action(detail=True, methods=['get'], url_path='letters', name='get_letters')
     def get_letters(self, request, pk=None):
         mailbox = MailBox.objects.get(pk=pk)
+        mailbox.checked = True
+        mailbox.save()
+
         queryset = mailbox.letters.all()  # 해당 우체통과 연관된 모든 편지 객체 반환
+        first_letter = queryset.first()
+        if first_letter is not None:
+            first_letter.checked = True  # 첫 번째 편지 읽음 처리
+            first_letter.save()
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -99,3 +104,15 @@ class MailBoxViewSet(viewsets.ModelViewSet):
     DELETE mailbox/<int:mailbox_pk>/ - ModelViewSet 에 이미 정의되어 있음(수정 X)
     """
 
+    """
+    GET mailbox/totalLetter/ - 오픈되지 않은 우체통에 담긴 총 편지 개수 조회 
+    """
+
+    @action(detail=False, methods=['get'], url_path='totalLetter', name='total_letter')
+    def total_letter(self, request):
+        total_letter = request.user.app_user.number_of_letters_in_unopened_mailbox()
+
+        return Response(
+            data={'total_letter': total_letter},
+            status=status.HTTP_200_OK
+        )
