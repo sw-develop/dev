@@ -25,11 +25,12 @@ services:
     networks:
       - network
     volumes:
+      - /home/mariadb_setting/my.cnf:/etc/mysql/my.cnf
       - maria-database:/var/lib/mysql
     secrets:
       - MYSQL_PASSWORD
       - MYSQL_ROOT_PASSWORD
-    command: --lower_case_table_names=1
+    command: --lower_case_table_names=0
     environment:
       MYSQL_DATABASE: poppymail_db
       MYSQL_USER: root
