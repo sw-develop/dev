@@ -16,7 +16,7 @@ def get_random_open_date():  # 랜덤 우체통 공개 날짜 생성 메서드
     # mailbox_close_date = date.today() + timedelta(days=3)
     # return mailbox_close_date + timedelta(days=random.randint(7, 30))
 
-    # 테스트용 : 우체통 봉인 시점(우체통 생성 후 1일 뒤), 랜덤 날짜 조건(우체통 봉인 시점 + 0~2일 후)
+    # 테스트용 : 우체통 봉인 시점(우체통 생성 후 1일 뒤), 랜덤 날짜 조건(우체통 봉인 시점 + 1~2일 후)
     mailbox_close_date = date.today() + timedelta(days=1)
     return mailbox_close_date + timedelta(days=random.randint(1, 2))
 
