@@ -6,8 +6,8 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
-# 로컬에서 돌릴 때, 아래 from BACKEND.settings.local import SECRET_KEY로 수정!!!!
-from BACKEND.settings.deploy import SECRET_KEY
+# from BACKEND.settings.local import SECRET_KEY # local mode
+from BACKEND.settings.deploy import SECRET_KEY  # deploy mode
 from accountapp.models import AppUser
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response

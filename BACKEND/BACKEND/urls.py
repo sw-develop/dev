@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('accountapp.urls')),
     path('', include('mailboxapp.urls')),
     path('', include('letterapp.urls')),
+    path('', include('adminapp.urls')),
 ]

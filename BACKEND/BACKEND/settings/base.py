@@ -14,6 +14,15 @@ from datetime import timedelta
 import environ, os
 from pathlib import Path
 
+
+def read_secret(secret_name):
+    file = open("/run/secrets/" + secret_name)
+    secret = file.read()
+    secret = secret.rstrip().lstrip()
+    file.close()
+    return secret
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition
@@ -33,6 +42,7 @@ INSTALLED_APPS = [
     'mailboxapp.apps.MailboxAppConfig',
     #  CORS 에러 방지
     'corsheaders',
+    'adminapp',
 ]
 
 MIDDLEWARE = [
