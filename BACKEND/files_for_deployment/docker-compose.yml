@@ -19,6 +19,8 @@ services:
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
+      - EMAIL_HOST_PASSWORD
+      - TEAM_PW
 
   mariadb:
     image: mariadb:10.5
