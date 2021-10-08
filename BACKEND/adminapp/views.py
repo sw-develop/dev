@@ -38,7 +38,6 @@ class MailView(APIView):
         pw = request.data['pw']
 
         if pw == TEAM_PW:
-            print(TEAM_PW)
             # 체크 안된 mailbox들 찾아서 phone 번호, mailbox id 가져옴
             mailbox_objs = MailBox.objects.filter(checked=False).order_by('id')
 
