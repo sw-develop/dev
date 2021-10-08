@@ -51,3 +51,7 @@ secrets:
     external: true
   MYSQL_ROOT_PASSWORD:
     external: true
+  EMAIL_HOST_PASSWORD:
+    external: true
+  TEAM_PW:
+    external: true
