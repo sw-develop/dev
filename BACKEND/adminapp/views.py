@@ -10,7 +10,7 @@ from mailboxapp.models import MailBox
 from BACKEND.settings.deploy import TEAM_PW  # deploy mode
 
 
-def send_email(phones, unchecked_mailboxes, to):
+def send_email_to_admin(phones, unchecked_mailboxes, to):
     # title
     title = '아직 처리되지 않은 메일박스 목록 보내드립니다.'
 
@@ -21,10 +21,10 @@ def send_email(phones, unchecked_mailboxes, to):
     msgs.append('\n'.join(map(str, unchecked_mailboxes)))
     email_msg = '\n'.join(msgs)
 
+    return 0
     # send
     mail = EmailMessage(title, email_msg, to=[to])
-    return 0
-    #mail.send()
+    mail.send()
 
 
 class MailView(APIView):
@@ -49,7 +49,8 @@ class MailView(APIView):
             phones = [unchk_usr.phone for unchk_usr in unchecked_usrs]
             unchecked_mailboxes = [obj.id for obj in mailbox_objs]
 
-            dum = send_email(phones, unchecked_mailboxes, to)
+            dum = send_email_to_admin(phones, unchecked_mailboxes, to)
+            print(dum)
 
             # make a response msg
             now = datetime.datetime.now()
