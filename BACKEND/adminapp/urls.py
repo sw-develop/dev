@@ -4,5 +4,5 @@ from .views import MailView
 app_name = "adminapp"
 
 urlpatterns = [
-    path('adminchk/', MailView.as_view()),
+    path('userstocheck/', MailView.as_view()),
 ]
