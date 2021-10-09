@@ -16,12 +16,13 @@ def send_email_to_admin(phones, unchecked_mailboxes, to):
 
     # msg
     msgs = []
-    msgs.append('\n'.join(phones))
-    msgs.append("\n\n유저들에게 카톡 메세지 전송 후 admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
-    msgs.append('\n'.join(map(str, unchecked_mailboxes)))
-    email_msg = '\n'.join(msgs)
-
     return 0
+    # msgs.append('\n'.join(phones))
+    # msgs.append("\n\n유저들에게 카톡 메세지 전송 후, admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
+    # msgs.append('\n'.join(map(str, unchecked_mailboxes)))
+    # email_msg = '\n'.join(msgs)
+
+
     # send
     # mail = EmailMessage(title, email_msg, to=[to])
     # mail.send()
