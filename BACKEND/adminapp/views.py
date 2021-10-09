@@ -23,8 +23,8 @@ def send_email_to_admin(phones, unchecked_mailboxes, to):
 
     return 0
     # send
-    mail = EmailMessage(title, email_msg, to=[to])
-    mail.send()
+    # mail = EmailMessage(title, email_msg, to=[to])
+    # mail.send()
 
 
 class MailView(APIView):
