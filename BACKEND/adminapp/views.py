@@ -47,7 +47,7 @@ class MailView(APIView):
             unchecked_usrs = [obj.user for obj in mailbox_objs]
             phones = [unchk_usr.phone for unchk_usr in unchecked_usrs]
             unchecked_mailboxes = [obj.id for obj in mailbox_objs]
-
+            return HttpResponse("test", status=200)
             send_email(phones, unchecked_mailboxes, to)
 
             # make a response msg
