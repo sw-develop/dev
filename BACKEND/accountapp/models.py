@@ -11,10 +11,10 @@ class AppUser(models.Model):
         primary_key=True,
         related_name='app_user'
     )  # user_id, related_name default : appuser
-    name = models.CharField(max_length=20, null=True)
-    phone = models.CharField(max_length=20, null=True, blank=True)
-    gender = models.CharField(max_length=20, null=True, blank=True)
-    birthdate = models.DateField(null=True, blank=True)
+    name = models.CharField(max_length=20, null=False)
+    phone = models.CharField(max_length=20, null=False)
+    gender = models.CharField(max_length=20, null=False)
+    birthdate = models.DateField(null=False)
     last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
