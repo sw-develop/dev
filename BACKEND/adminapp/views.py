@@ -15,17 +15,13 @@ def send_email_to_admin(phones, unchecked_mailboxes, to):
     title = '아직 처리되지 않은 메일박스 목록 보내드립니다.'
 
     # msg
-    msgs = ""
-    for phone in phones:
-        msgs += str(phone)
-        msgs += "\n"
-    msgs += "\n\n유저들에게 카톡 메세지 전송 후, admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요\n"
-    for unchecked_mailbox in unchecked_mailboxes:
-        msgs += str(unchecked_mailbox)
-        msgs += "\n"
+    msg = []
+    msg.append('\n'.join(map(str, phones)))
+    msg.append("\n\n유저들에게 카톡 메세지 전송 후, admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
+    msg.append('\n'.join(map(str, unchecked_mailboxes)))
 
     # send
-    mail = EmailMessage(title, msgs, to=[to])
+    mail = EmailMessage(title, '\n'.join(msg), to=[to])
     mail.send()
 
 
