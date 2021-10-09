@@ -20,7 +20,7 @@ def send_email(phones, unchecked_mailboxes, to):
     msgs.append("\n\n유저들에게 카톡 메세지 전송 후 admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
     msgs.append('\n'.join(map(str, unchecked_mailboxes)))
     email_msg = '\n'.join(msgs)
-
+    return 0
     # send
     mail = EmailMessage(title, email_msg, to=[to])
     mail.send()
@@ -48,7 +48,7 @@ class MailView(APIView):
             phones = [unchk_usr.phone for unchk_usr in unchecked_usrs]
             unchecked_mailboxes = [obj.id for obj in mailbox_objs]
 
-            #send_email(phones, unchecked_mailboxes, to)
+            dum = send_email(phones, unchecked_mailboxes, to)
 
             # make a response msg
             now = datetime.datetime.now()
