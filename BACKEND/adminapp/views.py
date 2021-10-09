@@ -48,7 +48,7 @@ class MailView(APIView):
             phones = [unchk_usr.phone for unchk_usr in unchecked_usrs]
             unchecked_mailboxes = [obj.id for obj in mailbox_objs]
 
-            send_email(phones, unchecked_mailboxes, to)
+            #send_email(phones, unchecked_mailboxes, to)
 
             # make a response msg
             now = datetime.datetime.now()
