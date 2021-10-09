@@ -6,12 +6,12 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
-# from BACKEND.settings.local import SECRET_KEY # local mode
+# from BACKEND.settings.local import SECRET_KEY  # local mode
 from BACKEND.settings.deploy import SECRET_KEY  # deploy mode
 from accountapp.models import AppUser
-from rest_framework.renderers import JSONRenderer
+
 from rest_framework.response import Response
-from rest_framework import request, status
+from rest_framework import status
 from rest_framework.generics import UpdateAPIView, DestroyAPIView
 from rest_framework.permissions import AllowAny
 

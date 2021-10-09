@@ -51,10 +51,15 @@ class MailView(APIView):
 
             send_email(phones, unchecked_mailboxes, to)
 
+            # make a response msg
+            response_msg = list()
+            response_msg.append(to + "로 메일을 보냈습니다.")
+            response_msg.append("처리할 mailbox의 갯수는 " + str(len(unchecked_mailboxes)) + "개 입니다.")
             now = datetime.datetime.now()
             now_datetime = now.strftime('%Y-%m-%d %H:%M:%S')
-            response_msg = "Ok! Successfully sent a mail to " + to + "- " + now_datetime
-            return HttpResponse(response_msg, status=200)
+            response_msg.append("  - " + now_datetime)
+
+            return HttpResponse(' '.join(response_msg), status=200)
 
         else:
             response_msg = "우리 팀이 아니시군요?"
