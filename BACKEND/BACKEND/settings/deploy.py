@@ -49,6 +49,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'poppymail1234@gmail.com'
 EMAIL_HOST_PASSWORD = read_secret("EMAIL_HOST_PASSWORD")
 SERVER_EMAIL = 'poppymail1234@gmail.com'
-DEFAULT_FROM_MAIL = 'POPPYMAIL 관리자'
+DEFAULT_FROM_MAIL = 'poppymail1234'
 
 TEAM_PW = read_secret('TEAM_PW')
