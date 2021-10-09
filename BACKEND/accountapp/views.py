@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
-from BACKEND.settings.local import SECRET_KEY  # local mode
+# from BACKEND.settings.local import SECRET_KEY  # local mode
 from BACKEND.settings.deploy import SECRET_KEY  # deploy mode
 from accountapp.models import AppUser
 
