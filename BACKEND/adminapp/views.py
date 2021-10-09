@@ -20,7 +20,7 @@ def send_email(phones, unchecked_mailboxes, to):
     msgs.append("\n\n유저들에게 카톡 메세지 전송 후 admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
     msgs.append('\n'.join(map(str, unchecked_mailboxes)))
     email_msg = '\n'.join(msgs)
-    return
+
     # send
     mail = EmailMessage(title, email_msg, to=[to])
     mail.send()
@@ -51,14 +51,11 @@ class MailView(APIView):
             send_email(phones, unchecked_mailboxes, to)
 
             # make a response msg
-            response_msg = list()
-            response_msg.append(to + "로 메일을 보냈습니다.")
-            response_msg.append("처리할 mailbox의 갯수는 " + str(len(unchecked_mailboxes)) + "개 입니다.")
             now = datetime.datetime.now()
             now_datetime = now.strftime('%Y-%m-%d %H:%M:%S')
-            response_msg.append("  - " + now_datetime)
+            response_msg = to + " 로 " + str(len(unchecked_mailboxes)) + "개 목록 전송되었습니다 - " + now_datetime
 
-            return HttpResponse(' '.join(response_msg), status=200)
+            return HttpResponse(response_msg, status=200)
 
         else:
             response_msg = "우리 팀이 아니시군요?"
