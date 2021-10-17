@@ -36,8 +36,9 @@ class MailView(APIView):
         pw = request.data['pw']
 
         if pw == TEAM_PW:
-            # 체크 안된 mailbox들 찾아서 phone 번호, mailbox id 가져옴
-            mailbox_objs = MailBox.objects.filter(checked=False).order_by('id')
+            # 1. 체크 안됨 2. 공개날짜 오늘 이하인 mailbox들 찾아서 phone 번호, mailbox id 가져옴
+            mailbox_objs = MailBox.objects.filter(checked=False)
+            mailbox_objs = mailbox_objs.filter(open_date__lte=datetime.datetime.today()).order_by('id')
 
             if len(mailbox_objs) == 0:
                 response_msg = "처리할 메일박스가 없습니다!"
