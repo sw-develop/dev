@@ -13,13 +13,68 @@
 
 ## Description
 
-## IA
+- 친구들의 편지를 랜덤한 날짜에 받아볼 수 있는 서비스
+
+![description](./IMGS/des1.png)
+
+![description](./IMGS/des2.png)
+
+
 
 ## Environment
 
+![architecture](./IMGS/architecture.jpg)
+
 ## Prerequisite
+
+- Make a virtual environment
+
+  ```shell
+  $ cd BACKEND
+  $ python3 -m venv venv
+  ```
+
+- Run a virtual environment
+
+  ```shell
+  C:\Users\Name\poppy> venv\Scripts\activate
+  ```
+
+- Install requirements
+
+  - install requirements
+
+    ```shell
+    (venv) ~$ pip install -r requirements.txt
+    ```
+
+  - pip upgrade
+
+    ```shell
+    (venv) ~$ python3 -m pip install --upgrade pip
+    ```
+
+    ​
 
 ## Usage
 
+```
+(myvenv) ~/BACKEND$ python manage.py makemigrations
+(myvenv) ~/BACKEND$ python manage.py migrate
+```
+
+```shell
+(myvenv) ~/BACKEND$ python manage.py runserver
+```
+
+
+
 ## Service imgs
 
+![img](./IMGS/img1.png)
+
+
+
+![img](./IMGS/img2.png)
+
+![img](./IMGS/img3.png)
