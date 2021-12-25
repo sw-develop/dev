@@ -11,6 +11,7 @@ class MailBox(models.Model):
     open_date = models.DateField()  # 우체통 공개 날짜
     key = models.CharField(max_length=50, db_column="mailbox_key", null=True)  # 우체통 비밀키
 
+    # --- !!! theme 속성 없앰 by 주호 !!! ---
     ThemeType = models.TextChoices('ThemeType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함
     # theme = models.CharField(max_length=20, choices=ThemeType.choices, null=True)
 
