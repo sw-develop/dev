@@ -16,9 +16,11 @@ def send_email_to_admin(phones, unchecked_mailboxes, to):
 
     # msg
     msg = []
-    msg.append('\n'.join(map(str, phones)))
-    msg.append("\n\n유저들에게 카톡 메세지 전송 후, admin 페이지에서 아래의 Mailbox ID를 check 표시 해주세요")
+    msg.append("1. 아래의 Mailbox ID를 check 표시 해주세요 => admin 페이지로!\n")
     msg.append('\n'.join(map(str, unchecked_mailboxes)))
+
+    msg.append("\n\n2. 유저들에게 카톡 메세지를 전송해주세요! => 카카오톡채널 관리자센터로!\n")
+    msg.append('\n'.join(map(str, phones)))
 
     # send
     mail = EmailMessage(title, '\n'.join(msg), to=[to])
