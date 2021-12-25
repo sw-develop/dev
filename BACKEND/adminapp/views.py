@@ -6,8 +6,8 @@ from rest_framework.permissions import AllowAny
 import datetime
 from mailboxapp.models import MailBox
 
-from BACKEND.settings.local import TEAM_PW  # local mode
-# from BACKEND.settings.deploy import TEAM_PW  # deploy mode
+# from BACKEND.settings.local import TEAM_PW  # local mode
+from BACKEND.settings.deploy import TEAM_PW  # deploy mode
 
 
 def send_email_to_admin(phones, unchecked_mailboxes, to):
