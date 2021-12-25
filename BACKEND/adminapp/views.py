@@ -6,8 +6,8 @@ from rest_framework.permissions import AllowAny
 import datetime
 from mailboxapp.models import MailBox
 
-# from BACKEND.settings.local import TEAM_PW  # local mode
-from BACKEND.settings.deploy import TEAM_PW  # deploy mode
+from BACKEND.settings.local import TEAM_PW  # local mode
+# from BACKEND.settings.deploy import TEAM_PW  # deploy mode
 
 
 def send_email_to_admin(phones, unchecked_mailboxes, to):
@@ -36,9 +36,13 @@ class MailView(APIView):
         pw = request.data['pw']
 
         if pw == TEAM_PW:
-            # 1. 체크 안됨 2. 공개날짜 오늘 이하인 mailbox들 찾아서 phone 번호, mailbox id 가져옴
+            # filter 기준 1. checked 되지 않음
+            # filter 기준 2. 공개날짜가 today이거나 그 이전인 mailbox여야함
+            # filter 기준 3. mailbox가 가지고 있는 편지의 개수가 1개 이상이어야 함
+            # => mailbox들에 해당하는 유저의 phone 번호, mailbox id 가져옴
             mailbox_objs = MailBox.objects.filter(checked=False)
             mailbox_objs = mailbox_objs.filter(open_date__lte=datetime.datetime.today()).order_by('id')
+            mailbox_objs = [obj for obj in mailbox_objs if obj.number_of_letter() >= 1]
 
             if len(mailbox_objs) == 0:
                 response_msg = "처리할 메일박스가 없습니다!"
@@ -49,7 +53,6 @@ class MailView(APIView):
             unchecked_mailboxes = [obj.id for obj in mailbox_objs]
 
             send_email_to_admin(phones, unchecked_mailboxes, to)
-
 
             # make a response msg
             now = datetime.datetime.now()
