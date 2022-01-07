@@ -17,3 +17,6 @@ class Letter(models.Model):
 
     class Meta:
         db_table = 'letter'
+
+    def __str__(self):
+        return f'{self.mailbox} -> (편지id:{self.id}, 편지내용:{self.content[:10]})'

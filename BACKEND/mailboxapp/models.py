@@ -23,6 +23,9 @@ class MailBox(models.Model):
     class Meta:
         db_table = 'mailbox'  # default: mailboxapp_mailbox
 
+    def __str__(self):
+        return f'{self.user} -> (우체통id:{self.id}, 우체통이름:{self.link_title})'
+
     def number_of_letter(self):  # 우체통의 편지 개수 반환 메서드
         return self.letters.count()  # using related_name
 
