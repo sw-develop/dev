@@ -11,14 +11,15 @@ from letterapp.serializers import ListLetterSerializer
 
 
 def get_random_open_date():  # 랜덤 우체통 공개 날짜 생성 메서드
-    # 랜덤 날짜 조건 : 우체통 봉인 시점(우체통 생성 후 3일 뒤)부터 1주일 ~ 1달 후
     # 배포용
-    # mailbox_close_date = date.today() + timedelta(days=3)
-    # return mailbox_close_date + timedelta(days=random.randint(7, 30))
+    # 우체통에 편지 작성 기한 : 우체통 생성 후 3일 뒤
+    # 우체통 오픈 날짜 : 우체통 생성 후 5일 뒤
+    mailbox_close_date = date.today() + timedelta(days=3)
+    return mailbox_close_date + timedelta(days=2)
 
     # 테스트용 : 우체통 봉인 시점(우체통 생성 후 1일 뒤), 랜덤 날짜 조건(우체통 봉인 시점 + 1~2일 후)
-    mailbox_close_date = date.today() + timedelta(days=1)
-    return mailbox_close_date + timedelta(days=random.randint(1, 2))
+    # mailbox_close_date = date.today() + timedelta(days=1)
+    # return mailbox_close_date + timedelta(days=random.randint(1, 2))
 
 
 def get_random_key():  # 우체통 별 랜덤 키 값 생성 메서드
