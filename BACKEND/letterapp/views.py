@@ -20,7 +20,7 @@ class LetterRequestView(APIView):
             mailbox_obj = MailBox.objects.get(id=mailbox_pk, key=random_strkey)
 
             # 우체통 동봉된 이후에 유저의 접근!!
-            if datetime.now() > mailbox_obj.date_created + timedelta(hours=24):  # 배포용 : hours=72, 테스트용 : hours=24
+            if datetime.now() > mailbox_obj.date_created + timedelta(hours=72):  # 배포용 : hours=72, 테스트용 : hours=24
                 return HttpResponse(
                     "No! User accesses after mailbox has been enclosed",
                     status=400
