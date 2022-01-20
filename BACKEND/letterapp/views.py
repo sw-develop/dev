@@ -23,7 +23,7 @@ class LetterRequestView(APIView):
             if datetime.now() > mailbox_obj.date_created + timedelta(hours=72):  # 배포용 : hours=72, 테스트용 : hours=24
                 return HttpResponse(
                     "No! User accesses after mailbox has been enclosed",
-                    status=400
+                    status=403
                 )
 
             # ok response
@@ -40,7 +40,7 @@ class LetterRequestView(APIView):
         except MailBox.DoesNotExist:
             return HttpResponse(
                 "No! The requested mailbox not exists in DB",
-                status=400
+                status=404
             )
 
     def post(self, request, mailbox_pk, random_strkey):
