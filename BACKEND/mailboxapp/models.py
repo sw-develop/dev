@@ -11,8 +11,9 @@ class MailBox(models.Model):
     open_date = models.DateField()  # 우체통 공개 날짜
     key = models.CharField(max_length=50, db_column="mailbox_key", null=True)  # 우체통 비밀키
 
+    # --- !!! theme 속성 없앰 by 주호 !!! ---
     ThemeType = models.TextChoices('ThemeType', 'RED YELLOW ORANGE')  # 수정 - value 값 변경해야 함
-    theme = models.CharField(max_length=20, choices=ThemeType.choices, null=True)
+    # theme = models.CharField(max_length=20, choices=ThemeType.choices, null=True)
 
     checked = models.BooleanField(default=False)
 
@@ -21,6 +22,9 @@ class MailBox(models.Model):
 
     class Meta:
         db_table = 'mailbox'  # default: mailboxapp_mailbox
+
+    def __str__(self):
+        return f'{self.user} -> (우체통id:{self.id}, 우체통이름:{self.link_title})'
 
     def number_of_letter(self):  # 우체통의 편지 개수 반환 메서드
         return self.letters.count()  # using related_name
