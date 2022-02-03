@@ -4,8 +4,8 @@
 PoppyMail📬은 개개인의 우체통에 다른 사람이 작성한 온라인 편지를 담아 랜덤 날짜에 확인하는 온라인 웹 서비스 입니다.
 
 ## 🔗 링크
-▶️ [POPPY-MAIL](!https://poppy-mail.vercel.app/)   
-▶️ [POPPY Instagram](!https://www.instagram.com/poppy.mail_/?utm_medium=copy_link)
+▶️ [POPPY-MAIL](https://poppy-mail.vercel.app/)   
+▶️ [POPPY Instagram](https://www.instagram.com/poppy.mail_/?utm_medium=copy_link)
 
 ## ✔️ 역할
 |이름   |github                   |담당 기능|
